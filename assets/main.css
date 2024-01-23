@@ -103,7 +103,7 @@ body {
 	border: 1px solid #e0e0e0;
 }
 .home {
-	background: url(/img/Image\(1\).png) center/cover no-repeat;
+	background: url(./img/Image\(1\).png) center/cover no-repeat;
 	height: 900px;
 	width: 100%;
 }
@@ -164,7 +164,7 @@ body {
 	height: 367px;
 	flex-shrink: 0;
 	border-radius: 30px;
-	background: url(/img/Photo.jpg);
+	background: url(./img/Photo.jpg);
 	display: flex;
 	padding-left: 55px;
 	justify-content: center;
@@ -175,7 +175,7 @@ body {
 	height: 367px;
 	flex-shrink: 0;
 	border-radius: 30px;
-	background: url(/img/Photo\(1\).jpg) center/cover no-repeat;
+	background: url(./img/Photo\(1\).jpg) center/cover no-repeat;
 	display: flex;
 	padding-left: 55px;
 	justify-content: center;
@@ -337,42 +337,42 @@ body {
 	height: 485px;
 }
 .categories__picture {
-	background: url(../img/Photo.png), #f9f8f8 20% / cover;
+	background: url(./img/Photo.png), #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-2 {
-	background: url(../img/Photo\(1\).png) #f9f8f8 20% / cover;
+	background: url(./img/Photo\(1\).png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-3 {
-	background: url(../img/Photo\(2\).png) #f9f8f8 20% / cover;
+	background: url(./img/Photo\(2\).png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-4 {
-	background: url(../img/image\ 13.png) #f9f8f8 20% / cover;
+	background: url(./img/image\ 13.png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-5 {
-	background: url(../img/image\ 14.png) #f9f8f8 20% / cover;
+	background: url(./img/image\ 14.png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-6 {
-	background: url(../img/Photo\(3\).png) #f9f8f8 20% / cover;
+	background: url(./img/Photo\(3\).png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
@@ -380,14 +380,14 @@ body {
 	text-align: center;
 }
 .categories__picture-7 {
-	background: url(../img/Photo\(4\).png) #f9f8f8 20% / cover;
+	background: url(./img/Photo\(4\).png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
 }
 .categories__picture-8 {
-	background: url(../img/Photo\(5\).png) #f9f8f8 20%;
+	background: url(./img/Photo\(5\).png) #f9f8f8 20%;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
@@ -505,7 +505,7 @@ body {
 	padding-bottom: 117px;
 }
 .sub__inner {
-	background: url("../img/back-sea.png") 0 0 / cover no-repeat;
+	background: url("./img/back-sea.png") 0 0 / cover no-repeat;
 	height: 325px;
 	width: 100%;
 	display: flex;
