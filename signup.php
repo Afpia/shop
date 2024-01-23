@@ -64,7 +64,7 @@
 						<?php mayBeHasError(fieldName:'name') ?>
 					/>
 
-					<?php echo $_SESSION['validation']['name']; ?>
+					<?php ErrorWarning(fieldName:'name'); ?>
 
 				</label>
 				<label for="email">

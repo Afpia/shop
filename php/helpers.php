@@ -11,5 +11,13 @@ function redirect(string $path)
 
 function mayBeHasError(string $fieldName)
 {
-    echo isset($_SESSION['validation']['$fieldName']) ? 'aria-invalid="true"' : '';
+    echo isset($_SESSION['validation']['$fieldName']) ? 'aria-invalid="true required"' : '';
+}
+function ErrorWarning(string $fieldName)
+{
+    if(empty($fieldName)){
+    echo ($_SESSION['validation']['$fieldName']); 
+}else{
+    echo "";
+}
 }
