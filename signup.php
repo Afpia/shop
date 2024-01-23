@@ -1,3 +1,8 @@
+
+<?php 
+	require_once '/OSPanel/domains/shop/php/helpers.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 	<head>
@@ -47,7 +52,7 @@
 			</header>
 		</div>
 		<div class="wrapper">
-			<form class="card">
+			<form class="card" method="post" action="/php/registr.php" enctype="multipart/form-data">
 				<h2>Регистрация</h2>
 				<label for="name">
 					Имя
@@ -56,9 +61,11 @@
 						id="name"
 						name="name"
 						placeholder="Иванов Иван"
-						aria-invalid="true"
-						required
+						<?php mayBeHasError(fieldName:'name') ?>
 					/>
+
+					<?php echo $_SESSION['validation']['name']; ?>
+
 				</label>
 				<label for="email">
 					E-mail
@@ -67,7 +74,7 @@
 						id="email"
 						name="email"
 						placeholder="ivan@areaweb.su"
-						required
+						
 					/>
 				</label>
 				<label for="avatar"
@@ -82,7 +89,7 @@
 							id="password"
 							name="password"
 							placeholder="******"
-							required
+							
 						/>
 					</label>
 					<label for="password_confirmation">
@@ -92,7 +99,7 @@
 							id="password_confirmation"
 							name="password_confirmation"
 							placeholder="******"
-							required
+							
 						/>
 					</label>
 				</div>

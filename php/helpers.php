@@ -2,8 +2,14 @@
 
 session_start();
 
-function rederict(string $path)
+
+function redirect(string $path)
 {
-    header(header:"Location: $path");
+    header(header:"Location:$path");
     die();
+}
+
+function mayBeHasError(string $fieldName)
+{
+    echo isset($_SESSION['validation']['$fieldName']) ? 'aria-invalid="true"' : '';
 }
