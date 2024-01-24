@@ -134,16 +134,17 @@ body {
 	font-size: 1rem;
 	margin-top: 6px;
 	margin-bottom: 20px;
+	height: 100%;
 }
 #email {
 	width: 100%;
-	padding: 10px;
 	border: 1px solid #cfd0d1;
 	border-radius: 0.25rem;
 	padding: 1rem;
 	font-size: 1rem;
 	margin-top: 6px;
 	margin-bottom: 20px;
+	height: 100%;
 }
 #password:focus:required {
 	border: 1px solid red;
@@ -193,11 +194,37 @@ body {
 .card label:nth-child(4) input {
 	color: #5b6079;
 }
-.card #email:focus:required {
-	border: 1px solid red;
+.error-red {
+	border: 1px solid red !important;
 }
-.card #name:focus:required {
-	border: 1px solid red;
+.i-password {
+	position: absolute;
+	font-size: 	20px;
+	font-weight: 400;
+	color: #274c5b;
+	right: 0;
+	top: 0;
+	color: red;
+}
+.i-name {
+	position: absolute;
+	font-size: 	20px;
+	font-weight: 400;
+	color: #274c5b;
+	left: 510px;
+	top: 0;
+	color: red;
+	width: 110px;
+}
+.i-email {
+	position: absolute;
+	font-size: 	20px;
+	font-weight: 400;
+	color: #274c5b;
+	right: 0;
+	top: 60px;
+	color: red;
+	width: 280px;
 }
 .grid {
 	display: flex;
