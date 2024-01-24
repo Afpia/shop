@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/php/helpers.php'; ?>
+
 <!DOCTYPE html>
 <html lang="ru" data-theme="light">
 	<head>
@@ -45,19 +47,22 @@
 				</div>
 			</header>
 		</div>
-		<form class="card">
+		<form method="post" action="/php/logIn.php" class="card">
 			<h2>Вход</h2>
-			<label for="name">
-				Имя
+			<label for="email">
+				E-mail
 				<input
 					type="text"
-					id="name"
-					name="name"
-					placeholder="Иванов Иван"
-					aria-invalid="true"
-					required
+					id="email"
+					name="email"
+					placeholder="ivan@areaweb.su"
+					value="<?php echo old('email') ?>"
+						<?php mayBeHasError(fieldName:'email') ?>
 				/>
 			</label>
+			<?php if(hasValidationError(fieldName:'email')): ?>
+						<div class="i-email"><?php ErrorWarning(fieldName:'email'); ?></div>
+					<?php endif; ?>
 			<label for="password-auth">
 				Пароль
 				<input
@@ -65,8 +70,11 @@
 					id="password-auth"
 					name="password-auth"
 					placeholder="******"
-					required
+					<?php mayBeHasError(fieldName:'password') ?>
 				/>
+				<?php if(hasValidationError(fieldName:'password')): ?>
+						<div class="i-password"><?php ErrorWarning(fieldName:'password'); ?></div>
+					<?php endif; ?>
 			</label>
 			<button type="submit" id="submit">Продолжить</button>
 		</form>

@@ -4,7 +4,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@
 							<a href=""><li>Pages</li></a>
 							<a href=""><li>Shop</li></a>
 							<a href=""><li>Projects</li></a>
-							<a href="./login.html"><li>Log in</li></a>
+							<a href="./login.php"><li>Log in</li></a>
 						</ul>
 					</nav>
 					<div class="header__right">
@@ -86,6 +86,7 @@
 				<label for="avatar"
 					>Изображение профиля
 					<input type="file" id="avatar" name="avatar" />
+					
 				</label>
 				<div class="grid">
 					<label for="password" style="position: relative;">
@@ -108,7 +109,7 @@
 							id="password_confirmation"
 							name="password_confirmation"
 							placeholder="******"
-							
+							<?php mayBeHasError(fieldName:'password') ?>
 						/>
 					</label>
 				</div>
@@ -123,7 +124,7 @@
 			</form>
 			<?php clearValidation() ?>
 			<p class="have__acc">
-				У меня уже есть<a href="./login.html"> аккаунт</a>
+				У меня уже есть<a href="./login.php"> аккаунт</a>
 			</p>
 		</div>
 		

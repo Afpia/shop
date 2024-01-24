@@ -266,6 +266,7 @@ body {
 	margin-bottom: 20px;
 }
 .card .checkbox input[type="checkbox"] {
+	-o-accent-color: green;
 	accent-color: green;
 	width: 25px;
 	height: 25px;
