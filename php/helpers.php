@@ -84,8 +84,12 @@ function getPDO()
     }
 }
 
-function getMySQL(){
-
+function getMySQL()
+{
+    $conn = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    if(!$conn){
+    die("Ошибка ".mysqli_connect_error());
+};
 }
 
 function findUser(string $email): array|bool
@@ -127,5 +131,5 @@ function checkAuth(): void
 
 function checkGuest()
 {
-    isset($_SESSION['user']['id']);
+    empty($_SESSION['user']['id']);
 }

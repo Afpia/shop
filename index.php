@@ -32,7 +32,7 @@
 							<a href=""><li>Pages</li></a>
 							<a href=""><li>Shop</li></a>
 							<a href=""><li>Projects</li></a>
-							<?php if(checkGuest()){
+							<?php if(empty($_SESSION['user']['id'])){
 								echo '<a href="./login.php"><li>Log in</li></a>';
 							}else{
 								echo '<a href="./php/profile.php"><li>Profile</li></a>';
