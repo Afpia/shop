@@ -84,6 +84,10 @@ function getPDO()
     }
 }
 
+function getMySQL(){
+
+}
+
 function findUser(string $email): array|bool
 {
     $pdo = getPDO();
@@ -119,4 +123,9 @@ function checkAuth(): void
     if (!isset($_SESSION['user']['id'])) {
         redirect('/');
     }
+}
+
+function checkGuest()
+{
+    isset($_SESSION['user']['id']);
 }

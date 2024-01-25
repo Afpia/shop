@@ -5,8 +5,10 @@ require_once __DIR__ . '/helpers.php';
 $email = $_POST['email'] ?? null;
 $password = $_POST['password'] ?? null;
 
+addOldValues('email', $email);
+
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    addOldValues('email', $email);
+    
     addValidationError('email', 'Неверный формат электронной почты');
     addValidationError('email', 'Ошибка валидации');
     redirect('/login.php');
@@ -21,7 +23,7 @@ if (!$user) {
 
 if (!password_verify($password, $user['password'])) {
     addValidationError('password', 'Неверный пароль');
-    redirect('/login.php');
+    print_r($user['password']);
 }
 
 $_SESSION['user']['id'] = $user['id'];

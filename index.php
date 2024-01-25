@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/php/helpers.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,12 +27,17 @@
 					</div>
 					<nav class="nav roboto-bold">
 						<ul>
-							<a href="./index.html"><li>Home</li></a>
+							<a href="./index.php"><li>Home</li></a>
 							<a href=""><li>About</li></a>
 							<a href=""><li>Pages</li></a>
 							<a href=""><li>Shop</li></a>
 							<a href=""><li>Projects</li></a>
-							<a href="./login.php"><li>Log in</li></a>
+							<?php if(checkGuest()){
+								echo '<a href="./login.php"><li>Log in</li></a>';
+							}else{
+								echo '<a href="./php/profile.php"><li>Profile</li></a>';
+							} ?>
+							
 						</ul>
 					</nav>
 					<div class="header__right">

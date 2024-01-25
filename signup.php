@@ -30,7 +30,7 @@
 					</div>
 					<nav class="nav roboto-bold">
 						<ul>
-							<a href="./index.html"><li>Home</li></a>
+							<a href="./index.php"><li>Home</li></a>
 							<a href=""><li>About</li></a>
 							<a href=""><li>Pages</li></a>
 							<a href=""><li>Shop</li></a>
