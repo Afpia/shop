@@ -10,7 +10,7 @@ addOldValues('email', $email);
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     
     addValidationError('email', 'Неверный формат электронной почты');
-    addValidationError('email', 'Ошибка валидации');
+    addValidationError('email', 'Ошибка валидации'); 
     redirect('/login.php');
 }
 
