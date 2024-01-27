@@ -3,7 +3,7 @@
 <header>
 				<div class="header__inner">
 					<div class="header__logo">
-						<a href="./index.html">
+						<a href="./index.php">
 							<img src="./img/Logo.svg" alt="" />
 						</a>
 					</div>
