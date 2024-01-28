@@ -3,12 +3,13 @@
 require_once __DIR__ . '/helpers.php';
 
 $email = $_POST['email'] ?? null;
-$password = $_POST['password'] ?? null;
+$password = $_POST['password-auth'] ?? null;
 
 addOldValues('email', $email);
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+	addValidationError('email', 'Validation Error'); 
 	addValidationError('email', 'The email address is invalid.');
 	redirect('/login.php');
 }
@@ -22,7 +23,7 @@ if (!$user) {
 
 if (!password_verify($password, $user['password'])) {
 	addValidationError('password', 'Incorrect password');
-	print_r($user['password']);
+	redirect('/login.php');
 }
 
 $_SESSION['user']['id'] = $user['id'];

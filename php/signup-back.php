@@ -10,6 +10,7 @@ $password_confirmation = $_POST['password_confirmation'] ?? null;
 $avatar = $_FILES['avatar'] ?? null;
 
 $_SESSION['validation'] = [];
+print_r($avatar);
 
 if (empty($name)) {
 	addValidationError(fieldName: 'name', message: 'Blank name');
@@ -75,6 +76,6 @@ try {
 	die($e->getMessage());
 }
 
-$_SESSION['user']['id'] = $user['id'];
+$_SESSION['user']['id'] = findUser($email)['id'];
 
-redirect('/php/login-back.php');
+redirect('/profile.php');

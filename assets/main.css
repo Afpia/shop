@@ -111,6 +111,7 @@ html {
 	height: 900px;
 	width: 100%;
 }
+
 .home__inner {
 	display: flex;
 	flex-direction: column;

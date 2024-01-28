@@ -104,7 +104,6 @@ body {
 }
 
 /* shop */
-
 .banner-shop__inner {
 	background: url("../img/shop-bg.png") 0 0 / cover no-repeat;
 	min-height: 450px;
@@ -122,6 +121,48 @@ body {
 	font-style: normal;
 	font-weight: 800;
 	line-height: normal;
+	position: relative;
+}
+.svg1 {
+	position: absolute;
+	top: 50px;
+	left: 400px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg2 {
+	position: absolute;
+	top: 0px;
+	right: 380px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg3 {
+	position: absolute;
+	bottom: 50px;
+	left: 560px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg4 {
+	position: absolute;
+	bottom: 25px;
+	left: 800px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+@keyframes bounce {
+	from {
+		transform: scale(1);
+	}
+
+	60% {
+		transform: scale(1.4);
+	}
+
+	to {
+		transform: scale(1);
+	}
 }
 
 /* categories */
@@ -482,4 +523,3 @@ body {
 	font-weight: 700;
 	line-height: 165.4%;
 }
-

@@ -7,7 +7,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Organick</title>
-	<link rel="icon" href="" />
+	<link rel="icon" href="./img/favicon.png" />
 	<link rel="stylesheet" href="./assets/reset.css" />
 	<link rel="stylesheet" href="./assets/main.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +23,7 @@
 		<div class="wrapper">
 			<div class="home__inner">
 				<h2>100% Natural Food</h2>
-				<h1 class="roboto-black">Choose the best healthier way of life</h1>
+				<h1 class="roboto-black">Choose the best healthier way <br> of life</h1>
 				<button class="roboto-bold">
 					<p>Explore Now</p>
 					<img src="./img/Aerrow.svg" alt="" />
@@ -108,7 +108,7 @@
 			<h2 class="categories__suptitle yellowtail-regular">Categories</h2>
 			<h1 class="categories__title roboto">Our Products</h1>
 			<div class="categories__inner">
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=1">
 					<div class="categories__list">
 						<button class="categories__button">Vegetable</button>
 						<div class="categories__picture"></div>
@@ -131,7 +131,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=2">
 					<div class="categories__list">
 						<button class="categories__button">Fresh</button>
 						<div class="categories__picture-2"></div>
@@ -154,7 +154,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=3">
 					<div class="categories__list">
 						<button class="categories__button">Millets</button>
 						<div class="categories__picture-3"></div>
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=4">
 					<div class="categories__list">
 						<button class="categories__button">Vegetable</button>
 						<div class="categories__picture-4"></div>
@@ -200,7 +200,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=5">
 					<div class="categories__list">
 						<button class="categories__button">Health</button>
 						<div class="categories__picture-5"></div>
@@ -223,7 +223,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=6">
 					<div class="categories__list">
 						<button class="categories__button">Nuts</button>
 						<div class="categories__picture-6"></div>
@@ -246,7 +246,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=7">
 					<div class="categories__list">
 						<button class="categories__button">Fresh</button>
 						<div class="categories__picture-7"></div>
@@ -269,7 +269,7 @@
 						</div>
 					</div>
 				</a>
-				<a href="./shop-single.php">
+				<a href="./shop-single.php?id=8">
 					<div class="categories__list">
 						<button class="categories__button">Fresh</button>
 						<div class="categories__picture-8"></div>
