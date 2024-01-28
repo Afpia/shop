@@ -22,7 +22,7 @@ checkGuest();
 		<?php include_once __DIR__ . '/components/header.php' ?>
 	</div>
 	<div class="wrapper">
-		<form class="card" method="post" action="/php/registr.php" enctype="multipart/form-data">
+		<form class="card" method="post" action="/php/signup-back.php" enctype="multipart/form-data">
 			<h2>Sign up</h2>
 			<label for="name" style="position: relative;">
 				Name
@@ -40,7 +40,6 @@ checkGuest();
 			</label>
 			<label for="avatar">Profile image
 				<input type="file" id="avatar" name="avatar" />
-
 			</label>
 			<div class="grid">
 				<label for="password" style="position: relative;">

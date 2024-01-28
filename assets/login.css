@@ -176,9 +176,11 @@ body {
 	font-size: 20px;
 	font-weight: 400;
 	color: #274c5b;
-	right: 0;
+	left: 440px;
 	top: 0;
 	color: red;
+	width: 175px;
+	text-align: right;
 }
 .i-name {
 	position: absolute;
@@ -195,10 +197,11 @@ body {
 	font-size: 20px;
 	font-weight: 400;
 	color: #274c5b;
-	left: 365px;
+	left: 360px;
 	top: 0;
 	color: red;
 	width: 260px;
+	text-align: right;
 }
 .grid {
 	display: flex;

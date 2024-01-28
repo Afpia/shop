@@ -9,7 +9,6 @@ addOldValues('email', $email);
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-	addValidationError('email', 'Неверный формат электронной почты');
 	addValidationError('email', 'The email address is invalid.');
 	redirect('/login.php');
 }
@@ -17,12 +16,12 @@ if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 $user = findUser($email);
 
 if (!$user) {
-	addValidationError('password', "Пользователь $email не найден");
+	addValidationError('email', "User not found");
 	redirect('/login.php');
 }
 
 if (!password_verify($password, $user['password'])) {
-	addValidationError('password', 'Неверный пароль');
+	addValidationError('password', 'Incorrect password');
 	print_r($user['password']);
 }
 

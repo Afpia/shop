@@ -205,6 +205,8 @@ body {
 	right: 0;
 	top: 0;
 	color: red;
+	width: 162px;
+	text-align: right;
 }
 .i-name {
 	position: absolute;

@@ -14,7 +14,6 @@ $_SESSION['validation'] = [];
 if (empty($name)) {
 	addValidationError(fieldName: 'name', message: 'Blank name');
 };
-
 if (!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
 
 	addValidationError(fieldName: 'email', message: 'The email address is invalid.');
@@ -31,7 +30,7 @@ if (empty($password)) {
 };
 
 if ($password != $password_confirmation) {
-	addValidationError(fieldName: 'password', message: 'Password mismatch');
+	addValidationError(fieldName: 'password', message: 'Mismatch');
 };
 
 if (!empty($avatar['name'])) {
@@ -39,11 +38,11 @@ if (!empty($avatar['name'])) {
 	$types = ['image/jpeg', 'image/png'];
 
 	if (!in_array($avatar['type'], $types)) {
-		addValidationError('avatar', 'Неверный тип изображения');
+		addValidationError('avatar', 'Incorrect image type');
 	}
 
 	if (($avatar['size'] / 5000000) >= 1) {
-		addValidationError('avatar', 'Изображение больше 5 МБ');
+		addValidationError('avatar', 'Image larger than 5 MB');
 	}
 }
 
@@ -78,4 +77,4 @@ try {
 
 $_SESSION['user']['id'] = $user['id'];
 
-redirect('/php/logIn.php');
+redirect('/php/login-back.php');

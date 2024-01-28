@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/../php/helpers.php' ?>
 
-<header>
+<header id="header">
 	<div class="header__inner">
 		<div class="header__logo">
 			<a href="./index.php">
@@ -12,7 +12,7 @@
 				<a href="./index.php">
 					<li>Home</li>
 				</a>
-				<a href="">
+				<a href="./index.php#about-us">
 					<li>About</li>
 				</a>
 				<a href="">

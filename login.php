@@ -21,7 +21,7 @@ checkGuest();
 	<div class="wrapper">
 		<?php include_once __DIR__ . '/components/header.php' ?>
 	</div>
-	<form method="post" action="./php/logIn.php" class="card">
+	<form method="post" action="./php/login-back.php" class="card">
 		<h2>Log in to your account</h2>
 		<label for="email" style="position: relative;">
 			E-mail
@@ -30,7 +30,7 @@ checkGuest();
 				<div class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></div>
 			<?php endif; ?>
 		</label>
-		<label for="password-auth">
+		<label for="password-auth" style="position: relative;">
 			Password
 			<input type="password-auth" id="password-auth" name="password-auth" placeholder="******" <?php mayBeHasError(fieldName: 'password') ?> />
 			<?php if (hasValidationError(fieldName: 'password')) : ?>
