@@ -23,7 +23,6 @@ if (!$user) {
 
 if (!password_verify($password, $user['password'])) {
     addValidationError('password', 'Неверный пароль');
-    print_r($user['password']);
     redirect('/login.php');
 }
 
