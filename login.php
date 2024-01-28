@@ -8,8 +8,9 @@ checkGuest();
 
 <head>
 	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Log in</title>
-	<link rel="icon" href="" />
+	<link rel="icon" href="./img/favicon.png" />
 	<link rel="stylesheet" href="./assets/reset.css" />
 	<link rel="stylesheet" href="./assets/login.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />

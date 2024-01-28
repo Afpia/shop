@@ -9,7 +9,7 @@ checkGuest();
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Sign on</title>
-	<link rel="icon" href="" />
+	<link rel="icon" href="./img/favicon.png" />
 	<link rel="stylesheet" href="./assets/reset.css" />
 	<link rel="stylesheet" href="./assets/signup.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +38,7 @@ checkGuest();
 					<span class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></span>
 				<?php endif; ?>
 			</label>
-			<label for="avatar">Profile image
+			<label for="avatar" style="position: relative;">Profile image
 				<input type="file" id="avatar" name="avatar" />
 				<?php if (hasValidationError(fieldName: 'avatar')) : ?>
 					<span class="i-email"><?php ErrorWarning(fieldName: 'avatar'); ?></span>

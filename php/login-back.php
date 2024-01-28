@@ -9,8 +9,8 @@ addOldValues('email', $email);
 
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
+	addValidationError('email', 'Validation Error'); 
 	addValidationError('email', 'The email address is invalid.');
-	addValidationError('email', 'Ошибка валидации'); 
 	redirect('/login.php');
 }
 

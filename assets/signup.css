@@ -226,7 +226,18 @@ body {
 	left: 365px;
 	top: 0;
 	color: red;
-	max-width: 100%;
+	width: 255px;
+	text-align: right;
+}
+.i-avatar {
+	position: absolute;
+	font-size: 20px;
+	font-weight: 400;
+	color: #274c5b;
+	left: 130px;
+	top: 0;
+	color: red;
+	width: 210px;
 }
 .grid {
 	display: flex;
