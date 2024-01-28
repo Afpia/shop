@@ -122,8 +122,50 @@ body {
 	font-style: normal;
 	font-weight: 800;
 	line-height: normal;
+	position: relative;
 }
 
+.svg1 {
+	position: absolute;
+	top: 50px;
+	right: 300px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg2 {
+	position: absolute;
+	bottom: 40px;
+	right: 300px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg3 {
+	position: absolute;
+	top: 50px;
+	left: 500px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+.svg4 {
+	position: absolute;
+	bottom: 25px;
+	left: 700px;
+	z-index: 99;
+	animation: bounce 10s infinite;
+}
+@keyframes bounce {
+	from {
+		transform: scale(1);
+	}
+
+	60% {
+		transform: scale(1.4);
+	}
+
+	to {
+		transform: scale(1);
+	}
+}
 /* product */
 
 .categories__picture {
