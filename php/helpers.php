@@ -124,11 +124,21 @@ function logout(): void
 function checkAuth(): void
 {
 	if (!isset($_SESSION['user']['id'])) {
-		redirect('/');
+		redirect('/login.php');
 	}
 }
 
 function checkGuest()
 {
-	empty($_SESSION['user']['id']);
+	if (isset($_SESSION['user']['id'])) {
+		redirect('/profile.php');
+	}
 }
+
+function currentProduct($id)
+{
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT * FROM product WHERE id = :id");
+	$stmt->execute(['id' => $id]);
+	return $stmt->fetch(\PDO::FETCH_ASSOC);
+};

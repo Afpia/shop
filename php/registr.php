@@ -76,4 +76,6 @@ try {
 	die($e->getMessage());
 }
 
-redirect('/');
+$_SESSION['user']['id'] = $user['id'];
+
+redirect('/php/logIn.php');
