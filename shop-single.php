@@ -109,9 +109,9 @@ if(empty($product = currentProduct($_GET['id']))){
 					<div class="product__buy">
 						<p>Quantity:</p>
 						<input type="number" min="0" placeholder="1" step="1" max="10" value="1" required>
-						<a href="./">
+						<a href="./shop.php">
 							<button class="shop_now">
-								Load More
+								Add to cart
 								<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<circle cx="9.5" cy="9.5" r="9.5" fill="#335B6B" />
 									<path d="M9.47641 6.12891L12.871 9.19342L9.47641 12.2579M12.3995 9.19342H5.51611" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
