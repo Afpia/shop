@@ -29,7 +29,6 @@
 				} else {
 					echo '<a href="./profile.php"><li>Profile</li></a>';
 				} ?>
-
 			</ul>
 		</nav>
 		<div class="header__right">
