@@ -20,25 +20,27 @@ $user = currentUser();
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:wght@400;700;900&family=Yellowtail&display=swap" rel="stylesheet" />
 </head>
 
-<body>
-	<div class="wrapper">
-		<?php include_once __DIR__ . '/components/header.php' ?>
-	</div>
-
-	<section class='profile'>
-		<div class='wrapper'>
-			<div class="profile__inner">
-				<div class="profile__avatar">
-					<img src="<?php echo $user['avatar'] ?>" alt="">
-				</div>
-				<p class="username"><?php echo $user['name'] ?></p>
-				<p class="email"></span><?php echo $user['Email'] ?></p>
-				<form action="/php/logout.php">
-					<button>Выйти из аккаунта</button>
-				</form>
-			</div>
+<body class="body">
+	<div class="root">
+		<div class="wrapper">
+			<?php include_once __DIR__ . '/components/header.php' ?>
 		</div>
-	</section>
+		<section class='profile'>
+			<div class='wrapper'>
+				<div class="profile__inner">
+					<div class="profile__avatar">
+						<img src="<?php echo $user['avatar'] ?>" alt="">
+					</div>
+					<p class="username"><?php echo $user['name'] ?></p>
+					<p class="email"></span><?php echo $user['Email'] ?></p>
+					<form action="/php/logout.php">
+						<button>Выйти из аккаунта</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</div>
 </body>
+<script src="./assets/index-shop.js"></script>
 
 </html>
