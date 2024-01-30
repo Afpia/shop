@@ -91,14 +91,14 @@ ti.fromTo(
 		5
 	);
 
-gsap.to(".home__title, .home__subtitle", {
+gsap.to(".home__title, .home__subtitle, .home__button", {
 	scrollTrigger: {
 		trigger: ".header__inner",
 		start: "top top",
-		scrub: 1,
+		scrub: 5,
 	},
 	x: 160,
-	scale: 1.1,
+	// scale: 1.1,
 });
 
 document.addEventListener("DOMContentLoaded", function () {
