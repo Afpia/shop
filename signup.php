@@ -92,7 +92,7 @@ checkGuest();
 			<label for="avatar" style="position: relative;">Profile image
 				<input type="file" id="avatar" name="avatar" />
 				<?php if (hasValidationError(fieldName: 'avatar')) : ?>
-					<span class="i-avatar"><?php ErrorWarning(fieldName: 'avatar'); ?></span>
+					<span class="i-email"><?php ErrorWarning(fieldName: 'avatar'); ?></span>
 				<?php endif; ?>
 			</label>
 			<div class="grid">

@@ -55,7 +55,7 @@ html {
 	position: absolute;
 	top: 0;
 	right: 0;
-	border: 1px solid  #E6E6E6;
+	border: 1px solid #e6e6e6;
 	background-color: white;
 	width: 30vw;
 	z-index: 998;
@@ -107,7 +107,7 @@ html {
 	background-color: #fff;
 	height: 2px;
 }
-.burger-menu-2{
+.burger-menu-2 {
 	display: block;
 	width: 40px;
 	height: 40px;
@@ -126,7 +126,7 @@ html {
 .header.open .burger-menu-2 {
 	transform: translate3d(0, 0, 0);
 }
-.header.open .nav-shop  {
+.header.open .nav-shop {
 	transform: translate3d(0, 0, 0);
 }
 .header.open .burger-menu {
@@ -140,8 +140,6 @@ html {
 	position: relative;
 	z-index: 999;
 }
-
-
 
 .header__inner {
 	display: flex;

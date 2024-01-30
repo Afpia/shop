@@ -20,7 +20,6 @@ if (!$user) {
 	addValidationError('email', "User not found");
 	redirect('/login.php');
 }
-
 if (!password_verify($password, $user['password'])) {
 	addValidationError('password', 'Incorrect password');
 	redirect('/login.php');

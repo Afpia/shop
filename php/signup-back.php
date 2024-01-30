@@ -78,4 +78,4 @@ try {
 
 $_SESSION['user']['id'] = findUser($email)['id'];
 
-redirect('/profile.php');
+redirect('/');

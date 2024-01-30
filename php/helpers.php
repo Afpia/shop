@@ -142,3 +142,18 @@ function currentProduct($id)
 	$stmt->execute(['id' => $id]);
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 };
+
+function drowStars($rating){
+	for($i = 1; $i<= $rating; $i++){
+		echo '<img src="/img/Star 5.svg" alt="">';
+	}
+}
+
+function currentCategory($id)
+{
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT Categ_name FROM Categories WHERE id = :id");
+	$stmt->execute(['id' => $id]);
+	$cat = $stmt->fetch(\PDO::FETCH_ASSOC);
+	return $cat['Categ_name'];
+};
