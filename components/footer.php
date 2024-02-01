@@ -14,7 +14,7 @@
 						</a>
 						<h3>Address</h3>
 						<a href="">
-							<h4>88 road, borklyn street, USA</h4>
+							<h4>88 road, borklyn <br> street, USA</h4>
 						</a>
 					</div>
 				</div>

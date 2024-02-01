@@ -95,7 +95,7 @@ gsap.to(".home__title, .home__subtitle, .home__button", {
 	scrollTrigger: {
 		trigger: ".header__inner",
 		start: "top top",
-		scrub: 5,
+		scrub: 10,
 	},
 	x: 160,
 	// scale: 1.1,

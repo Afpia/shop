@@ -10,7 +10,6 @@ $password_confirmation = $_POST['password_confirmation'] ?? null;
 $avatar = $_FILES['avatar'] ?? null;
 
 $_SESSION['validation'] = [];
-print_r($avatar);
 
 if (empty($name)) {
 	addValidationError(fieldName: 'name', message: 'Blank name');
