@@ -100,7 +100,7 @@ if (empty($product = currentProduct($_GET['id']))) {
 					<div class="product__about">
 						<h2><?php echo str_replace("_", " ", $product['name']); ?></h2>
 						<div class="categories__star">
-							<?php drowStars($product['rating']) ?>
+							<?php echo drowStars($product['rating']) ?>
 						</div>
 						<div class="product__left">
 							<p class="product__cost">$<?PHP echo $product['price'] ?>.00 </p>

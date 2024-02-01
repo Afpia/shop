@@ -84,11 +84,12 @@ function getPDO()
 }
 
 function getMySQL()
-{
+{	
 	$conn = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 	if (!$conn) {
 		die("Ошибка " . mysqli_connect_error());
 	};
+	return $conn;
 }
 
 function findUser(string $email): array|bool
@@ -144,9 +145,11 @@ function currentProduct($id)
 };
 
 function drowStars($rating){
+	$masage = '';
 	for($i = 1; $i<= $rating; $i++){
-		echo '<img src="/img/Star 5.svg" alt="">';
+		$masage = $masage . '<img src="/img/Star 5.svg" alt="">';
 	}
+	return $masage;
 }
 
 function currentCategory($id)
@@ -157,3 +160,10 @@ function currentCategory($id)
 	$cat = $stmt->fetch(\PDO::FETCH_ASSOC);
 	return $cat['Categ_name'];
 };
+
+function ProductSelect(){
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT * FROM product");
+	$stmt->execute();
+	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

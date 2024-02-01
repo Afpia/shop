@@ -287,7 +287,7 @@ html {
 	height: 485px;
 }
 .categories__picture {
-	background: url(../img/broccoli.png), #f9f8f8 20% / cover;
+
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
