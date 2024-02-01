@@ -90,7 +90,7 @@ checkGuest();
 				<?php endif; ?>
 			</label>
 			<label for="avatar" style="position: relative;">Profile image
-				<input type="file" id="avatar" name="avatar" />
+				<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
 				<?php if (hasValidationError(fieldName: 'avatar')) : ?>
 					<span class="i-email"><?php ErrorWarning(fieldName: 'avatar'); ?></span>
 				<?php endif; ?>

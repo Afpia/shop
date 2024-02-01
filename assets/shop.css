@@ -287,13 +287,14 @@ html {
 	height: 485px;
 }
 .categories__picture {
-
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
+	background-size: contain;
+
 }
-.categories__picture-2 {
+/* .categories__picture-2 {
 	background: url(../img/banana.png) #f9f8f8 20% / cover;
 	background-repeat: no-repeat;
 	background-blend-mode: multiply;
@@ -370,7 +371,7 @@ html {
 	background-blend-mode: multiply;
 	height: 324px;
 	width: 100%;
-}
+} */
 .categories__button {
 	display: flex;
 	padding: 5px 12px 6px 12px;

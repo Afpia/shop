@@ -93,7 +93,7 @@
 							<a href="./shop-single.php?id=' . $row['id'] .' ">
 								<div class="categories__list">
 									<button class="categories__button">'. currentCategory($row['categoryID']) .'</button>
-									<div class="categories__picture" style="background: url('.$row['image'].'), #f9f8f8 20% / cover;"></div>
+									<div class="categories__picture" style="background: url('.$row['image']. '), #f9f8f8 20% / contain; background-position: center; background-repeat: no-repeat;background-size: contain;"></div>
 									<h3>'. str_replace("_", " ", $row['name']) .'</h3>
 									<hr class="categories__hr" />
 									<div class="categories__footer">

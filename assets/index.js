@@ -66,7 +66,7 @@ ti.fromTo(
 		4
 	)
 	.fromTo(
-		".header__right button",
+		".burger-menu",
 		{
 			opacity: 0,
 		},
@@ -113,9 +113,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.querySelector("body").classList.remove("close");
 	});
 });
-document.querySelector(".nav-shop").addEventListener("click", (event) => {
-	event._isClickWithInNav = true;
-});
+document
+	.querySelector(".nav-shop, .nav-shop-undefined")
+	.addEventListener("click", (event) => {
+		event._isClickWithInNav = true;
+	});
 document.getElementById("burger").addEventListener("click", (event) => {
 	event._isClickWithInNav = true;
 });

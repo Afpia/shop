@@ -27,20 +27,55 @@ $user = currentUser();
 		</div>
 		<section class='profile'>
 			<div class='wrapper'>
-				<div class="profile__inner">
-					<div class="profile__avatar">
-						<img src="<?php echo $user['avatar'] ?>" alt="">
+				<div class="profile__main">
+					<div class="profile__info-main">
+						<div class="profile__avatar">
+							<img src="<?php echo $user['avatar'] ?>" alt="avatar">
+						</div>
+						<p class="username"><?php echo $user['name'] ?></p>
+						<p class="email">Customer</p>
+						<button class="profile__edit" id="modal-button">Edit Profile</button>
 					</div>
-					<p class="username"><?php echo $user['name'] ?></p>
-					<p class="email"></span><?php echo $user['Email'] ?></p>
-					<form action="/php/logout.php">
-						<button>Выйти из аккаунта</button>
-					</form>
+					<div class="profile__address">
+					</div>
 				</div>
+				<form action="/php/logout.php">
+					<button>Log out</button>
+				</form>
 			</div>
 		</section>
+		<div class="modal" id="modal">
+			<div class="modal__inner">
+				<button class="modal-esc" id="modal-esc">
+					<span></span>
+					<span></span>
+				</button>
+				<h2>Edit Profile</h2>
+
+				<label for="name" style="position: relative;">
+					Name
+					<input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" />
+					<?php if (hasValidationError(fieldName: 'name')) : ?>
+						<div class="i-name"><?php ErrorWarning(fieldName: 'name'); ?></div>
+					<?php endif; ?>
+				</label>
+				<label for="email" style="position: relative;">
+					E-mail
+					<input type="text" id="email" name="email" value="<?php echo $user['Email'] ?>" <?php mayBeHasError(fieldName: 'email') ?> />
+					<?php if (hasValidationError(fieldName: 'email')) : ?>
+						<div class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></div>
+					<?php endif; ?>
+				</label>
+				<div class="profile__avatar-edit">
+
+					<input type="file" id="image" alt="image" accept="image/png, image/jpeg">
+					<img src="<?php echo $user['avatar'] ?>" alt="avatar">
+				</div>
+				<button type="submit" id="submit" disabled>Confirm</button>
+			</div>
+		</div>
 	</div>
 </body>
-<script src="./assets/index-shop.js"></script>
+<script src="./assets/profile.js"></script>
 
 </html>

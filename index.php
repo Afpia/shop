@@ -16,6 +16,7 @@
 </head>
 
 <body class="body">
+	<div class="brightness"></div>
 	<div class="root">
 		<div class="wrapper">
 			<?php include_once __DIR__ . '/components/header.php' ?>
@@ -345,26 +346,28 @@
 				<h2 class="categories__suptitle yellowtail-regular">Categories</h2>
 				<h1 class="categories__title roboto">Our Products</h1>
 				<div class="categories__inner">
-				<?php foreach(ProductSelect() as $row){
-					if($row['id']<=8){
-						echo '
-							<a href="./shop-single.php?id=' . $row['id'] .' ">
+					<?php foreach (ProductSelect() as $row) {
+						if ($row['id'] <= 8) {
+							echo '
+							<a href="./shop-single.php?id=' . $row['id'] . ' ">
 								<div class="categories__list">
-									<button class="categories__button">'. currentCategory($row['categoryID']) .'</button>
-									<div class="categories__picture" style="background: url('.$row['image'].'), #f9f8f8 20% / cover;"></div>
-									<h3>'. str_replace("_", " ", $row['name']) .'</h3>
+									<button class="categories__button">' . currentCategory($row['categoryID']) . '</button>
+									<div class="categories__picture" style="background: url(' . $row['image'] . '), #f9f8f8 20% /contain; background-position: center; background-repeat: no-repeat; background-size: contain;"></div>
+									<h3>' . str_replace("_", " ", $row['name']) . '</h3>
 									<hr class="categories__hr" />
 									<div class="categories__footer">
 										<div class="categories__left">
-												<p class="categories__cost">$' .$row['price'].'.00</p>
-												<p class="categories__sale">$'.$row['price'] - $row['discountAmount'].'.00</p>
+												<p class="categories__cost">$' . $row['price'] . '.00</p>
+												<p class="categories__sale">$' . $row['price'] - $row['discountAmount'] . '.00</p>
 										</div>
 										<div class="categories__star">
-											'.drowStars($row['rating']).'
+											' . drowStars($row['rating']) . '
 										</div>
 									</div>
 								</div>
-							</a>';}}
+							</a>';
+						}
+					}
 					?>
 				</div>
 				<a href="./shop.php"><button class="categories__but shop_now">
@@ -411,4 +414,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 	<script src="./assets/index.js"></script>
+
 </html>
