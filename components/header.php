@@ -31,7 +31,7 @@
 				} ?>
 			</ul>
 		</nav>
-		<div class="nav-shop">
+		<!-- <div class="nav-shop">
 			<ul>
 				<h2>Shopping Cart (0)</h2>
 				<li>
@@ -113,12 +113,12 @@
 				</div>
 				<button class="nav-shop__buy">Checkout</button>
 			</div>
-		</div>
-		<!-- <div class="nav-shop-undefined">
+		</div> -->
+		<div class="nav-shop-undefined">
 			<h2>Shopping Cart (0)</h2>
 			<p>Please register to use the shopping cart.</p>
 			<button class="nav-shop__buy-undefined">Log in</button>
-		</div> -->
+		</div>
 		<div class="header__right">
 			<div class="input">
 				<input type="text" />

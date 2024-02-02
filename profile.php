@@ -21,6 +21,7 @@ $user = currentUser();
 </head>
 
 <body class="body">
+	<div class="brightness"></div>
 	<div class="root">
 		<div class="wrapper">
 			<?php include_once __DIR__ . '/components/header.php' ?>
@@ -30,7 +31,7 @@ $user = currentUser();
 				<div class="profile__main">
 					<div class="profile__info-main">
 						<div class="profile__avatar">
-							<img src="<?php echo $user['avatar'] ?>" alt="avatar">
+							<img src="<?php echo $user['avatar'] ?>">
 						</div>
 						<p class="username"><?php echo $user['name'] ?></p>
 						<p class="email">Customer</p>
@@ -67,9 +68,8 @@ $user = currentUser();
 					<?php endif; ?>
 				</label>
 				<div class="profile__avatar-edit">
-
-					<input type="file" id="image" alt="image" accept="image/png, image/jpeg">
-					<img src="<?php echo $user['avatar'] ?>" alt="avatar">
+					<input type="file" id="image" accept="image/png, image/jpeg">
+					<img src="<?php echo $user['avatar'] ?>">
 				</div>
 				<button type="submit" id="submit" disabled>Confirm</button>
 			</div>
