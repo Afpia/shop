@@ -53,7 +53,7 @@ $user = currentUser();
 					<span></span>
 				</button>
 				<h2>Edit Profile</h2>
-				<form action="/php/cart.php" method="post">
+				<form action="/php/cart.php" method="post" enctype="multipart/form-data">
 					<label for="name" style="position: relative;">
 						Name
 						<input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" />

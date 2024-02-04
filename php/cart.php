@@ -1,7 +1,9 @@
 <?php  
     require_once __DIR__ . '/helpers.php';
 
-    $avatarPath = null;
+    $user_old = currentUser();
+
+    $avatarPath = $user_old['avatar'];
     $name = $_POST['name'] ?? null;
     $email = $_POST['email'] ?? null;
     $avatar = $_FILES['avatar'] ?? null;
@@ -12,7 +14,13 @@
 
         addValidationError(fieldName: 'email', message: 'The email address is invalid.');
     }
-    
+
+    $user = findUser($email);
+
+    if ($user['email'] != $user_old['email']) {
+        addValidationError(fieldName: 'email', message: 'The mail already exists');
+    }
+
     if (!empty($avatar['name'])) {
 
         $types = ['image/jpeg', 'image/png'];
@@ -33,33 +41,29 @@
     if (!empty($avatar['name'])) {
         $avatarPath = uploadFile($avatar, 'avatar');
     }
-    
-    print_r($avatar);
 
-    echo $avatarPath
+    $pdo = getPDO();
 
-    // $pdo = getPDO();
+    $query = "UPDATE users SET name = :name, Email = :email, avatar = :avatar WHERE id = :userID";
 
-    // $query = "UPDATE users SET name = :name, Email = :email, avatar = :avatar WHERE id = :userID";
+    $params = [
+        'name' => $name,
+        'email' => $email,
+        'avatar' => $avatarPath,
+        'userID' => $_SESSION['user']['id']
+    ];
 
-    // $params = [
-    //     'name' => $name,
-    //     'email' => $email,
-    //     'avatar' => $avatarPath,
-    //     'userID' => $_SESSION['user']['id']
-    // ];
+    $stmt = $pdo->prepare($query);
 
-    // $stmt = $pdo->prepare($query);
+    try {
+        $stmt->execute($params);
+    } catch (\Exception $e) {
+        die($e->getMessage());
+    }
 
-    // try {
-    //     $stmt->execute($params);
-    // } catch (\Exception $e) {
-    //     die($e->getMessage());
-    // }
+    $_SESSION['user']['id'] = findUser($email)['id'];
 
-    // $_SESSION['user']['id'] = findUser($email)['id'];
-
-    // redirect('/');
+    redirect('/');
 ?>  
 
 
