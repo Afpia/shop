@@ -31,94 +31,103 @@
 				} ?>
 			</ul>
 		</nav>
-		<!-- <div class="nav-shop">
-			<ul>
-				<h2>Shopping Cart (0)</h2>
-				<li>
-					<div class="nav-shop__item">
-						<img src="../img/banana.png" alt="">
-						<div class="nav-shop__title">
-							<h3>Fresh Banana Fruites</h3>
-							<p>1kg x $14.00</p>
+
+		<?php if (empty($_SESSION['user']['id'])) {
+					echo '<div class="nav-shop-undefined">
+					<h2>Shopping Cart (0)</h2>
+					<p>Please register to use the shopping cart.</p>
+					<button class="nav-shop__buy-undefined">Log in</button>
+				</div>';
+				} else {
+					echo '<div class="nav-shop">
+					<ul>
+						<h2>Shopping Cart (0)</h2>
+						<li>
+							<div class="nav-shop__item">
+								<img src="../img/banana.png" alt="">
+								<div class="nav-shop__title">
+									<h3>Fresh Banana Fruites</h3>
+									<p>1kg x $14.00</p>
+								</div>
+							</div>
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
+									<g clip-path="url(#clip0_60_313)">
+										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
+										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_60_313">
+											<rect width="24" height="24" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</li>
+						<hr>
+						<li>
+							<div class="nav-shop__item">
+								<img src="../img/nuts.png" alt="">
+								<div class="nav-shop__title">
+									<h3>White Nuts</h3>
+									<p>1kg x $15.00</p>
+								</div>
+							</div>
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
+									<g clip-path="url(#clip0_60_313)">
+										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
+										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_60_313">
+											<rect width="24" height="24" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</li>
+						<hr>
+						<li>
+							<div class="nav-shop__item">
+								<img src="../img/corn.png" alt="">
+								<div class="nav-shop__title">
+									<h3>Fresh Corn</h3>
+									<p>1kg x $17.00</p>
+								</div>
+							</div>
+							<button>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
+									<g clip-path="url(#clip0_60_313)">
+										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
+										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+									</g>
+									<defs>
+										<clipPath id="clip0_60_313">
+											<rect width="24" height="24" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+							</button>
+						</li>
+					</ul>
+					<div class="nav-shop__footer">
+						<div class="nav-shop__sum">
+							<p class="nav-shop__count">3 Product</p>
+							<p class="nav-shop__cost">$26.00</p>
 						</div>
+						<button class="nav-shop__buy">Checkout</button>
 					</div>
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-							<g clip-path="url(#clip0_60_313)">
-								<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-								<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							</g>
-							<defs>
-								<clipPath id="clip0_60_313">
-									<rect width="24" height="24" fill="white" />
-								</clipPath>
-							</defs>
-						</svg>
-					</button>
-				</li>
-				<hr>
-				<li>
-					<div class="nav-shop__item">
-						<img src="../img/nuts.png" alt="">
-						<div class="nav-shop__title">
-							<h3>White Nuts</h3>
-							<p>1kg x $15.00</p>
-						</div>
-					</div>
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-							<g clip-path="url(#clip0_60_313)">
-								<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-								<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							</g>
-							<defs>
-								<clipPath id="clip0_60_313">
-									<rect width="24" height="24" fill="white" />
-								</clipPath>
-							</defs>
-						</svg>
-					</button>
-				</li>
-				<hr>
-				<li>
-					<div class="nav-shop__item">
-						<img src="../img/corn.png" alt="">
-						<div class="nav-shop__title">
-							<h3>Fresh Corn</h3>
-							<p>1kg x $17.00</p>
-						</div>
-					</div>
-					<button>
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-							<g clip-path="url(#clip0_60_313)">
-								<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-								<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-								<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-							</g>
-							<defs>
-								<clipPath id="clip0_60_313">
-									<rect width="24" height="24" fill="white" />
-								</clipPath>
-							</defs>
-						</svg>
-					</button>
-				</li>
-			</ul>
-			<div class="nav-shop__footer">
-				<div class="nav-shop__sum">
-					<p class="nav-shop__count">3 Product</p>
-					<p class="nav-shop__cost">$26.00</p>
-				</div>
-				<button class="nav-shop__buy">Checkout</button>
-			</div>
-		</div> -->
-		<div class="nav-shop-undefined">
-			<h2>Shopping Cart (0)</h2>
-			<p>Please register to use the shopping cart.</p>
-			<button class="nav-shop__buy-undefined">Log in</button>
-		</div>
+				</div>';
+				} ?>
+
+		
+
+		
+
 		<div class="header__right">
 			<div class="input">
 				<input type="text" />

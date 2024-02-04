@@ -4,6 +4,7 @@ require_once __DIR__ . '/php/helpers.php';
 checkAuth();
 
 $user = currentUser();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,26 +53,24 @@ $user = currentUser();
 					<span></span>
 				</button>
 				<h2>Edit Profile</h2>
-
-				<label for="name" style="position: relative;">
-					Name
-					<input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" />
-					<?php if (hasValidationError(fieldName: 'name')) : ?>
-						<div class="i-name"><?php ErrorWarning(fieldName: 'name'); ?></div>
-					<?php endif; ?>
-				</label>
-				<label for="email" style="position: relative;">
-					E-mail
-					<input type="text" id="email" name="email" value="<?php echo $user['Email'] ?>" <?php mayBeHasError(fieldName: 'email') ?> />
-					<?php if (hasValidationError(fieldName: 'email')) : ?>
-						<div class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></div>
-					<?php endif; ?>
-				</label>
-				<div class="profile__avatar-edit">
-					<input type="file" id="image" accept="image/png, image/jpeg">
-					<img src="<?php echo $user['avatar'] ?>">
-				</div>
-				<button type="submit" id="submit" disabled>Confirm</button>
+				<form action="/php/cart.php" method="post">
+					<label for="name" style="position: relative;">
+						Name
+						<input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" />
+					</label>
+					<label for="email" style="position: relative;">
+						E-mail<?php print_r($_SESSION['validation']) ?>
+						<input type="text" id="email" name="email" value="<?php echo $user['Email'] ?>" />
+						<?php if (hasValidationError(fieldName: 'email')) : ?>
+					<span class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></span>
+				<?php endif; ?>
+					</label>
+					<div class="profile__avatar-edit">
+						<input type="file" id="image" accept="image/png, image/jpeg" name="avatar">
+						<img src="<?php echo $user['avatar'] ?>">
+					</div>
+					<input type="submit" id="submit" value="Confirm"></input>
+				</form>
 			</div>
 		</div>
 	</div>

@@ -20,10 +20,10 @@ if (!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
 }
 
 $user = findUser($email);
+
 if ($user) {
 	addValidationError(fieldName: 'email', message: 'The mail already exists');
 }
-
 
 if (empty($password)) {
 	addValidationError(fieldName: 'password', message: 'Password is blank');
