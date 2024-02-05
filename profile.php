@@ -37,13 +37,19 @@ $user = currentUser();
 						<p class="username"><?php echo $user['name'] ?></p>
 						<p class="email">Customer</p>
 						<button class="profile__edit" id="modal-button">Edit Profile</button>
+						<form action="/php/logout.php" class="profile__exit">
+							<button><img src="./img/exit.svg" alt="exit"></button>
+						</form>
 					</div>
 					<div class="profile__address">
 					</div>
 				</div>
-				<form action="/php/logout.php">
-					<button>Log out</button>
-				</form>
+				<div class="profile__footer">
+					<div class="profile__history">
+
+					</div>
+				</div>
+
 			</div>
 		</section>
 		<div class="modal" id="modal">
@@ -62,12 +68,30 @@ $user = currentUser();
 						E-mail<?php print_r($_SESSION['validation']) ?>
 						<input type="text" id="email" name="email" value="<?php echo $user['Email'] ?>" />
 						<?php if (hasValidationError(fieldName: 'email')) : ?>
-					<span class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></span>
-				<?php endif; ?>
+							<span class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></span>
+						<?php endif; ?>
 					</label>
-					<div class="profile__avatar-edit">
-						<input type="file" id="image" accept="image/png, image/jpeg" name="avatar">
-						<img src="<?php echo $user['avatar'] ?>">
+					<div class="modal__footer">
+						<div class="modal__avatar">
+							<p>Avatar</p>
+							<div class="profile__avatar-edit">
+								<input type="file" id="image" accept="image/png, image/jpeg" name="avatar">
+								<img src="<?php echo $user['avatar'] ?>">
+							</div>
+						</div>
+						<div class="grid">
+							<label for="password" style="position: relative;">
+								Password
+								<input type="password" id="password" name="password" placeholder="******" <?php mayBeHasError(fieldName: 'password') ?> />
+								<?php if (hasValidationError(fieldName: 'password')) : ?>
+									<div class="i-password"><?php ErrorWarning(fieldName: 'password'); ?></div>
+								<?php endif; ?>
+							</label>
+							<label for="password_confirmation">
+								Confirm password
+								<input type="password" id="password_confirmation" name="password_confirmation" placeholder="******" <?php mayBeHasError(fieldName: 'password') ?> />
+							</label>
+						</div>
 					</div>
 					<input type="submit" id="submit" value="Confirm"></input>
 				</form>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-	require_once __DIR__ . '/php/helpers.php';
+<?php
+require_once __DIR__ . '/php/helpers.php';
 ?>
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +17,7 @@
 </head>
 
 <body class="body">
+	<div class="brightness"></div>
 	<div class="root">
 		<div class="wrapper">
 			<?php include_once __DIR__ . '/components/header.php' ?>
@@ -88,27 +90,28 @@
 			<div class="wrapper">
 				<div class="categories__inner">
 
-					<?php foreach(ProductSelect() as $row){
+					<?php foreach (ProductSelect() as $row) {
 						echo '
-							<a href="./shop-single.php?id=' . $row['id'] .' ">
+							<a href="./shop-single.php?id=' . $row['id'] . ' ">
 								<div class="categories__list">
-									<button class="categories__button">'. currentCategory($row['categoryID']) .'</button>
-									<div class="categories__picture" style="background: url('.$row['image']. '), #f9f8f8 20% / contain; background-position: center; background-repeat: no-repeat;background-size: contain;"></div>
-									<h3>'. str_replace("_", " ", $row['name']) .'</h3>
+									<button class="categories__button">' . currentCategory($row['categoryID']) . '</button>
+									<div class="categories__picture" style="background: url(' . $row['image'] . '), #f9f8f8 20% / contain; background-position: center; background-repeat: no-repeat;background-size: contain;"></div>
+									<h3>' . str_replace("_", " ", $row['name']) . '</h3>
 									<hr class="categories__hr" />
 									<div class="categories__footer">
 										<div class="categories__left">
-												<p class="categories__cost">$' .$row['price'].'.00</p>
-												<p class="categories__sale">$'.$row['price'] - $row['discountAmount'].'.00</p>
+												<p class="categories__cost">$' . $row['price'] . '.00</p>
+												<p class="categories__sale">$' . $row['price'] - $row['discountAmount'] . '.00</p>
 										</div>
 										<div class="categories__star">
-											'.drowStars($row['rating']).'
+											' . drowStars($row['rating']) . '
 										</div>
 									</div>
 								</div>
-							</a>';}
+							</a>';
+					}
 					?>
-					
+
 				</div>
 			</div>
 		</section>
