@@ -660,5 +660,61 @@ html {
 		0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
 	background: #ffffff;
 	border-radius: 0.25rem;
-	padding: 40px;
+	padding: 24px;
+	position: relative;
+}
+.profile__history::before {
+	content: "";
+	background-color: #f2f2f2;
+	min-width: 1024px;
+	height: 36px;
+	position: absolute;
+	top: 70px;
+	left: 0;
+}
+.profile__header {
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 16px;
+}
+.profile__header h2 {
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 150%;
+	color: #274c5b;
+}
+.profile__header button {
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 150%;
+	color: #00b207;
+}
+.profile__column {
+	display: grid;
+	grid-template-columns: repeat(4, 250px);
+	height: 36px;
+	/* background-color: #f2f2f2; */
+	align-items: center;
+}
+.profile__column p {
+	font-weight: 500;
+	font-size: 12px;
+	line-height: 100%;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	width: 100%;
+	position: relative;
+	z-index: 9;
+}
+.profile__order {
+	display: grid;
+	grid-template-columns: repeat(4, 250px);
+	height: 45px;
+	align-items: center;
+}
+.profile__order {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 150%;
+	color: #333333;
 }

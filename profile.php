@@ -46,7 +46,22 @@ $user = currentUser();
 				</div>
 				<div class="profile__footer">
 					<div class="profile__history">
-
+						<div class="profile__header">
+							<h2>Recet Order History</h2>
+							<button>View All</button>
+						</div>
+						<div class="profile__column">
+							<p>Order ID</p>
+							<p>DATE</p>
+							<p>TOTAL</p>
+							<p>STATUS</p>
+						</div>
+						<div class="profile__order">
+							<p>#323</p>
+							<p>8 Sep, 2023</p>
+							<p>$135.00 (5 Products)</p>
+							<p>Processing</p>
+						</div>
 					</div>
 				</div>
 
