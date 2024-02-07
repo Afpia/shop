@@ -38,7 +38,7 @@
 					echo '<div class="nav-shop-undefined">
 					<h2>Shopping Cart (0)</h2>
 					<p>Please register to use the shopping cart.</p>
-					<button class="nav-shop__buy-undefined">Log in</button>
+					<a href="../login.php"><button class="nav-shop__buy-undefined">Log in</button></a>
 				</div>';
 				} else {
 					echo '<div class="nav-shop">
