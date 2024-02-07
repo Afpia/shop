@@ -167,3 +167,13 @@ function ProductSelect(){
 	$stmt->execute();
 	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+function ProductSelectOne($id){
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT * FROM product WHERE id =:id ");
+	$stmt->execute(['id' => $id]);
+	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function HasCart($cart){
+	return  count($cart) ;
+}

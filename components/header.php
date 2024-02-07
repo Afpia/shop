@@ -1,5 +1,7 @@
-<?php require_once __DIR__ . '/../php/helpers.php' ?>
-
+<?php require_once __DIR__ . '/../php/helpers.php' ;
+	$cartCount = isset($_SESSION['cart']) ? HasCart($_SESSION['cart']) : 0;
+	$sum = 0
+?>
 <header id="header" class="header">
 	<div class="header__inner">
 		<div class="header__logo">
@@ -40,94 +42,53 @@
 				</div>';
 				} else {
 					echo '<div class="nav-shop">
-					<ul>
-						<h2>Shopping Cart (0)</h2>
-						<li>
-							<div class="nav-shop__item">
-								<img src="../img/banana.png" alt="">
-								<div class="nav-shop__title">
-									<h3>Fresh Banana Fruites</h3>
-									<p>1kg x $14.00</p>
+					<ul> <h2>Shopping Cart ('.$cartCount.')</h2>' ;
+					if(isset($_SESSION['cart'])){
+						foreach($_SESSION['cart'] as $row){
+							$productH = ProductSelectOne($row['id']);
+							echo '
+							<li>
+								<div class="nav-shop__item">
+									<img src="'.$productH['0']['image'].'" alt="">
+									<div class="nav-shop__title">
+										<h3>'. str_replace("_", " ", $productH['0']['name']) .'</h3> 
+										<p>'. $row['count'].'kg x $'.$productH['0']['price'] - $productH['0']['discountAmount'].'.00</p>
+									</div>
 								</div>
-							</div>
-							<button>
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-									<g clip-path="url(#clip0_60_313)">
-										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-									</g>
-									<defs>
-										<clipPath id="clip0_60_313">
-											<rect width="24" height="24" fill="white" />
-										</clipPath>
-									</defs>
-								</svg>
-							</button>
-						</li>
-						<hr>
-						<li>
-							<div class="nav-shop__item">
-								<img src="../img/nuts.png" alt="">
-								<div class="nav-shop__title">
-									<h3>White Nuts</h3>
-									<p>1kg x $15.00</p>
-								</div>
-							</div>
-							<button>
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-									<g clip-path="url(#clip0_60_313)">
-										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-									</g>
-									<defs>
-										<clipPath id="clip0_60_313">
-											<rect width="24" height="24" fill="white" />
-										</clipPath>
-									</defs>
-								</svg>
-							</button>
-						</li>
-						<hr>
-						<li>
-							<div class="nav-shop__item">
-								<img src="../img/corn.png" alt="">
-								<div class="nav-shop__title">
-									<h3>Fresh Corn</h3>
-									<p>1kg x $17.00</p>
-								</div>
-							</div>
-							<button>
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
-									<g clip-path="url(#clip0_60_313)">
-										<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-										<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-										<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-									</g>
-									<defs>
-										<clipPath id="clip0_60_313">
-											<rect width="24" height="24" fill="white" />
-										</clipPath>
-									</defs>
-								</svg>
-							</button>
-						</li>
-					</ul>
+								<form class="deleteForm" id="deleteForm_'.$row['id'].'" method="post" action="../php/delete_item.php">
+									<input type="hidden" name="itemToDelete" value="'.$row['id'].'">
+									<button type="submit">
+										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
+											<g clip-path="url(#clip0_60_313)">
+												<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
+												<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											</g>
+											<defs>
+												<clipPath id="clip0_60_313">
+													<rect width="24" height="24" fill="white" />
+												</clipPath>
+											</defs>
+										</svg>
+									</button>
+								</form>
+							</li>
+							<hr>
+							';
+							$sum += $row['count'] * ($productH['0']['price'] - $productH['0']['discountAmount']);
+						}
+					}
+					
+					echo '</ul>
 					<div class="nav-shop__footer">
 						<div class="nav-shop__sum">
-							<p class="nav-shop__count">3 Product</p>
-							<p class="nav-shop__cost">$26.00</p>
+							<p class="nav-shop__count">'. $cartCount .' Product</p>
+							<p class="nav-shop__cost">$'.$sum.'.00</p>
 						</div>
 						<button class="nav-shop__buy">Checkout</button>
 					</div>
 				</div>';
 				} ?>
-
-		
-
-		
-
 		<div class="header__right">
 			<div class="input">
 				<input type="text" />
@@ -144,7 +105,7 @@
 					<path d="M15.791 17H19.5729L22.4093 33.0731H37.5369" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M21.9022 29.1837L37.1494 29.2907C37.2587 29.2908 37.3647 29.2529 37.4493 29.1837C37.5339 29.1144 37.5918 29.0179 37.6133 28.9107L39.3151 20.4014C39.3289 20.3328 39.3272 20.262 39.3102 20.1941C39.2933 20.1262 39.2615 20.063 39.2171 20.0089C39.1727 19.9548 39.1169 19.9112 39.0536 19.8813C38.9903 19.8514 38.9212 19.8359 38.8513 19.8359L20.3584 19.8359" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
-				<p>Cart (0)</p>
+				<p>Cart (<?php echo $cartCount; ?>)</p>
 			</button>
 			<button class="burger-menu-2" id="burger-2">
 				<span></span>
