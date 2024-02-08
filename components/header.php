@@ -42,7 +42,7 @@ $sum = 0
 				</div>';
 		} else {
 			echo '<div class="nav-shop">
-					<ul> <h2>Shopping Cart (' . $cartCount . ')</h2>';
+					<ul> <h2 id="value2">Shopping Cart (' . $cartCount . ')</h2>';
 			if (isset($_SESSION['cart'])) {
 				foreach ($_SESSION['cart'] as $row) {
 					$productH = ProductSelectOne($row['id']);
@@ -55,9 +55,9 @@ $sum = 0
 										<p>' . $row['count'] . 'kg x $' . $productH['0']['price'] - $productH['0']['discountAmount'] . '.00</p>
 									</div>
 								</div>
-								<form method="post" action="../php/delete_item.php">
-									<input type="hidden" name="itemToDelete" value="' . $row['id'] . '">
-									<button class="button-delete" type="submit">
+								<form method="post" action="'.$_SERVER['PHP_SELF'].'">
+									<input type="hidden" id="inputValue" name="itemToDelete" value="' . $row['id'] . '">
+									<button class="button-delete" data-value="'.$row['count'] * ($productH['0']['price'] - $productH['0']['discountAmount']).'" type="submit" >
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
 											<g clip-path="url(#clip0_60_313)">
 											<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
@@ -81,8 +81,8 @@ $sum = 0
 			echo '</ul>
 					<div class="nav-shop__footer">
 						<div class="nav-shop__sum">
-							<p class="nav-shop__count">' . $cartCount . ' Product</p>
-							<p class="nav-shop__cost">$' . $sum . '.00</p>
+							<p id="value1" class="nav-shop__count">' . $cartCount . ' Product</p>
+							<p class="nav-shop__cost" id="target-element">$' . $sum . '.00</p>
 						</div>
 						<form method="post" action="../php/checkoutOrder.php">
 							<button type="submit" class="nav-shop__buy">Checkout</button>
@@ -90,6 +90,7 @@ $sum = 0
 					</div>
 				</div>';
 		} ?>
+		<script src="../assets/updateNumber.js"></script>
 		<div class="header__right">
 			<div class="input">
 				<input type="text" />
@@ -106,7 +107,7 @@ $sum = 0
 					<path d="M15.791 17H19.5729L22.4093 33.0731H37.5369" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 					<path d="M21.9022 29.1837L37.1494 29.2907C37.2587 29.2908 37.3647 29.2529 37.4493 29.1837C37.5339 29.1144 37.5918 29.0179 37.6133 28.9107L39.3151 20.4014C39.3289 20.3328 39.3272 20.262 39.3102 20.1941C39.2933 20.1262 39.2615 20.063 39.2171 20.0089C39.1727 19.9548 39.1169 19.9112 39.0536 19.8813C38.9903 19.8514 38.9212 19.8359 38.8513 19.8359L20.3584 19.8359" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
 				</svg>
-				<p>Cart (<?php echo $cartCount; ?>)</p>
+				<p id="value3">Cart (<?php echo $cartCount; ?>)</p>
 			</button>
 			<button class="burger-menu-2" id="burger-2">
 				<span></span>

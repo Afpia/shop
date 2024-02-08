@@ -116,6 +116,43 @@ function currentUser(): array|false
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
 
+function currentOrder(): array|false
+{
+	$pdo = getPDO();
+
+	$userId = $_SESSION['user']['id'] ?? null;
+
+	$stmt = $pdo->prepare("SELECT * FROM Orders WHERE ID_user = :id");
+	$stmt->execute(['id' => $userId]);
+	return $results =$stmt->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function ProductSelect(){
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT * FROM product");
+	$stmt->execute();
+	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function currentDelivered ($DateGet){
+	$today = strtotime(date('Y-m-d')); 
+    $input_date = strtotime($DateGet); 
+    if ($input_date == $today) {
+        return 'delivered';
+    } else {
+        return 'Processing';
+    };
+};
+
+
+function CountSumm($id)
+{
+	$pdo = getPDO();
+
+	$stmt = $pdo->prepare("SELECT SUM(count) AS sum_of_columns FROM ListOrder WHERE ID_order =:id");
+	$stmt->execute(['id' => $id]);
+	return $stmt->fetchColumn();
+}
 function logout(): void
 {
 	unset($_SESSION['user']['id']);
@@ -161,12 +198,7 @@ function currentCategory($id)
 	return $cat['Categ_name'];
 };
 
-function ProductSelect(){
-	$pdo = getPDO();
-	$stmt = $pdo->prepare("SELECT * FROM product");
-	$stmt->execute();
-	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+
 function ProductSelectOne($id){
 	$pdo = getPDO();
 	$stmt = $pdo->prepare("SELECT * FROM product WHERE id =:id ");

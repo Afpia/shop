@@ -49,17 +49,22 @@ $user = currentUser();
 							<button>View All</button>
 						</div>
 						<div class="profile__column">
-							<p>Order ID</p>
-							<p>DATE</p>
+							<p>Date order</p>
+							<p>Date get</p>
 							<p>TOTAL</p>
 							<p>STATUS</p>
 						</div>
-						<div class="profile__order">
-							<p>#323</p>
-							<p>8 Sep, 2023</p>
-							<p>$135.00 (5 Products)</p>
-							<p>Processing</p>
-						</div>
+						<?php 
+						foreach(currentOrder() as $ord){
+							echo'
+							<div class="profile__order">
+								<p>'.$ord['DateOrder'].'</p>
+								<p>'.$ord['DateGet'].'</p>
+								<p>$'.$ord['Price'].'.00 ('.CountSumm($ord['ID']).' Products)</p>
+								<p>'.currentDelivered($ord['DateGet']).'</p>
+							</div>';
+						}
+						 ?>
 					</div>
 				</div>
 			</div>
