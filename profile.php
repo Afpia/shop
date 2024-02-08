@@ -41,8 +41,6 @@ $user = currentUser();
 							<button><img src="./img/exit.svg" alt="exit"></button>
 						</form>
 					</div>
-					<div class="profile__address">
-					</div>
 				</div>
 				<div class="profile__footer">
 					<div class="profile__history">
@@ -64,7 +62,6 @@ $user = currentUser();
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</section>
 		<div class="modal" id="modal">

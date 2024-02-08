@@ -94,11 +94,24 @@ ti.fromTo(
 gsap.to(".home__title, .home__subtitle, .home__button", {
 	scrollTrigger: {
 		trigger: ".header__inner",
-		start: "top top",
-		scrub: 10,
+		start: "top -30%",
+		end: "+=300px",
+		scrub: 4,
 	},
-	x: 160,
-	// scale: 1.1,
+	x: -160,
+	opacity: 0,
+});
+gsap.from(".banner_get, .banner_get_2", {
+	scrollTrigger: {
+		trigger: ".get_segment",
+		start: "-15% center",
+		end: "+=250px",
+		markers: true,
+		scrub: 4,
+	},
+	scale: 0,
+	transformOrigin: "left center",
+	stagger: 1,
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -126,3 +139,9 @@ document.body.addEventListener("click", (event) => {
 	document.querySelector("header").classList.remove("open");
 	document.querySelector("body").classList.remove("close");
 });
+
+document.querySelector(".nav-shop").onclick = function (e) {
+	if (e.target.className != "button-delete") return;
+	let item = e.target.closest("li");
+	item.remove();
+};

@@ -228,6 +228,9 @@ html {
 	height: 1px;
 	background-color: #e6e6e6;
 	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: -10px;
 }
 .nav-shop__item {
 	display: flex;
@@ -265,13 +268,19 @@ html {
 	line-height: 21px;
 	font-weight: 700;
 }
+.button-delete {
+	width: 24px;
+	height: 24px;
+}
 .svg-cross {
 	width: 24px;
 	height: 24px;
 	/* cursor: pointer; */
 	transition: all 0.3s ease;
+	position: relative;
+	z-index: -1;
 }
-.svg-cross:hover g path {
+.button-delete:hover .svg-cross g path {
 	stroke: #000;
 }
 .nav-shop__sum {
@@ -626,10 +635,9 @@ html {
 	padding-bottom: 25px;
 }
 .categories__hr {
-	background-color: #dedddd;
-	width: 100%;
 	height: 1px;
-	margin-bottom: 6px;
+	background-color: #e6e6e6;
+	width: 100%;
 }
 .product__cost {
 	color: #b8b8b8;

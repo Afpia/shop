@@ -1,6 +1,6 @@
-<?php require_once __DIR__ . '/../php/helpers.php' ;
-	$cartCount = isset($_SESSION['cart']) ? HasCart($_SESSION['cart']) : 0;
-	$sum = 0
+<?php require_once __DIR__ . '/../php/helpers.php';
+$cartCount = isset($_SESSION['cart']) ? HasCart($_SESSION['cart']) : 0;
+$sum = 0
 ?>
 <header id="header" class="header">
 	<div class="header__inner">
@@ -35,62 +35,61 @@
 		</nav>
 
 		<?php if (empty($_SESSION['user']['id'])) {
-					echo '<div class="nav-shop-undefined">
+			echo '<div class="nav-shop-undefined">
 					<h2>Shopping Cart (0)</h2>
 					<p>Please register to use the shopping cart.</p>
 					<a href="../login.php"><button class="nav-shop__buy-undefined">Log in</button></a>
 				</div>';
-				} else {
-					echo '<div class="nav-shop">
-					<ul> <h2>Shopping Cart ('.$cartCount.')</h2>' ;
-					if(isset($_SESSION['cart'])){
-						foreach($_SESSION['cart'] as $row){
-							$productH = ProductSelectOne($row['id']);
-							echo '
+		} else {
+			echo '<div class="nav-shop">
+					<ul> <h2>Shopping Cart (' . $cartCount . ')</h2>';
+			if (isset($_SESSION['cart'])) {
+				foreach ($_SESSION['cart'] as $row) {
+					$productH = ProductSelectOne($row['id']);
+					echo '
 							<li>
 								<div class="nav-shop__item">
-									<img src="'.$productH['0']['image'].'" alt="">
+									<img src="' . $productH['0']['image'] . '" alt="">
 									<div class="nav-shop__title">
-										<h3>'. str_replace("_", " ", $productH['0']['name']) .'</h3> 
-										<p>'. $row['count'].'kg x $'.$productH['0']['price'] - $productH['0']['discountAmount'].'.00</p>
+										<h3>' . str_replace("_", " ", $productH['0']['name']) . '</h3> 
+										<p>' . $row['count'] . 'kg x $' . $productH['0']['price'] - $productH['0']['discountAmount'] . '.00</p>
 									</div>
 								</div>
 								<form method="post" action="../php/delete_item.php">
-									<input type="hidden" name="itemToDelete" value="'.$row['id'].'">
-									<button type="submit">
+									<input type="hidden" name="itemToDelete" value="' . $row['id'] . '">
+									<button class="button-delete" type="submit">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
 											<g clip-path="url(#clip0_60_313)">
-												<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
-												<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-												<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M12 23C18.0748 23 23 18.0748 23 12C23 5.92525 18.0748 1 12 1C5.92525 1 1 5.92525 1 12C1 18.0748 5.92525 23 12 23Z" stroke="#CCCCCC" stroke-miterlimit="10" />
+											<path d="M16 8L8 16" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+											<path d="M16 16L8 8" stroke="#666666" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
 											</g>
 											<defs>
-												<clipPath id="clip0_60_313">
-													<rect width="24" height="24" fill="white" />
-												</clipPath>
+											<clipPath id="clip0_60_313">
+												<rect width="24" height="24" fill="white" />
+											</clipPath>
 											</defs>
 										</svg>
+										<hr>
 									</button>
 								</form>
 							</li>
-							<hr>
 							';
-							$sum += $row['count'] * ($productH['0']['price'] - $productH['0']['discountAmount']);
-						}
-					}
-					
-					echo '</ul>
+					$sum += $row['count'] * ($productH['0']['price'] - $productH['0']['discountAmount']);
+				}
+			}
+			echo '</ul>
 					<div class="nav-shop__footer">
 						<div class="nav-shop__sum">
-							<p class="nav-shop__count">'. $cartCount .' Product</p>
-							<p class="nav-shop__cost">$'.$sum.'.00</p>
+							<p class="nav-shop__count">' . $cartCount . ' Product</p>
+							<p class="nav-shop__cost">$' . $sum . '.00</p>
 						</div>
 						<form method="post" action="../php/checkoutOrder.php">
 							<button type="submit" class="nav-shop__buy">Checkout</button>
 						</form>
 					</div>
 				</div>';
-				} ?>
+		} ?>
 		<div class="header__right">
 			<div class="input">
 				<input type="text" />

@@ -42,3 +42,14 @@ function modal(){
 }
 modal()
 cart()
+
+document.querySelector(".nav-shop").onclick = function (e) {
+	if (e.target.className != "button-delete") return;
+	let item = e.target.closest("li");
+	item.remove();
+};
+
+
+
+
+

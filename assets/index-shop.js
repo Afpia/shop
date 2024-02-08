@@ -23,3 +23,10 @@ document.body.addEventListener("click", (event) => {
 	document.querySelector("header").classList.remove("open");
 	document.querySelector("body").classList.remove("close");
 });
+
+
+document.querySelector(".nav-shop").onclick = function (e) {
+	if (e.target.className != "button-delete") return;
+	let item = e.target.closest("li");
+	item.remove();
+};
