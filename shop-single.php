@@ -109,7 +109,7 @@ if (empty($product = currentProduct($_GET['id']))) {
 						</div>
 						<p><?PHP echo $product['discription'] ?></p>
 						<form action="/php/shop_cart.php" method="post" class="product__buy">
-							<input type="hiden" name="product" value="<?php echo $product['id'] ?>">
+							<input type="hidden" name="product" value="<?php echo $product['id'] ?>">
 							<p>Quantity:</p>
 
 							<input type="number" name="count" min="0" placeholder="1" step="1" max="10" value="1" required>

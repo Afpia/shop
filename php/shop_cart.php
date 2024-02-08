@@ -14,13 +14,17 @@
         $_SESSION['cart'] = [];
     }
 
+    if ($cart['count'] == 0) {
+        $cart['count'] = 1;
+    }
+
     if(isset($_SESSION['cart']['product'.$product['id']])) {
-        $_SESSION['cart']['product'.$product['id']]['count'] += $_POST['count'];
+        $_SESSION['cart']['product'.$product['id']]['count'] += $cart['count'];
     } else {
         $_SESSION['cart']['product'.$product['id']] = $cart;
     }
 
-    print_r($_SESSION['cart']);
+    redirect('/shop.php');
 
 
         

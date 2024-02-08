@@ -80,7 +80,7 @@ $user = currentUser();
 						<input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" />
 					</label>
 					<label for="email" style="position: relative;">
-						E-mail<?php print_r($_SESSION['validation']) ?>
+						E-mail
 						<input type="text" id="email" name="email" value="<?php echo $user['Email'] ?>" />
 						<?php if (hasValidationError(fieldName: 'email')) : ?>
 							<span class="i-email"><?php ErrorWarning(fieldName: 'email'); ?></span>

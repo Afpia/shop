@@ -177,3 +177,12 @@ function ProductSelectOne($id){
 function HasCart($cart){
 	return  count($cart) ;
 }
+
+function findOrder(string $email): array|bool
+{
+	$pdo = getPDO();
+
+	$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+	$stmt->execute(['email' => $email]);
+	return $stmt->fetch(\PDO::FETCH_ASSOC);
+}

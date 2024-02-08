@@ -55,7 +55,7 @@
 										<p>'. $row['count'].'kg x $'.$productH['0']['price'] - $productH['0']['discountAmount'].'.00</p>
 									</div>
 								</div>
-								<form class="deleteForm" id="deleteForm_'.$row['id'].'" method="post" action="../php/delete_item.php">
+								<form method="post" action="../php/delete_item.php">
 									<input type="hidden" name="itemToDelete" value="'.$row['id'].'">
 									<button type="submit">
 										<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="svg-cross">
@@ -85,7 +85,9 @@
 							<p class="nav-shop__count">'. $cartCount .' Product</p>
 							<p class="nav-shop__cost">$'.$sum.'.00</p>
 						</div>
-						<button class="nav-shop__buy">Checkout</button>
+						<form method="post" action="../php/checkoutOrder.php">
+							<button type="submit" class="nav-shop__buy">Checkout</button>
+						</form>
 					</div>
 				</div>';
 				} ?>
