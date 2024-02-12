@@ -6,6 +6,7 @@
     }
 
     $sum = 0;
+    $DateOrder1 = new DateTime();
     $DateOrder = new DateTime();
     $DateGet = $DateOrder->add(new DateInterval('P1W'));
     foreach($_SESSION['cart'] as $row){
@@ -20,7 +21,7 @@
 
     $params = [
         'ID_user' => $_SESSION['user']['id'],
-        'DateOrder' => $DateOrder->format('Y-m-d'),
+        'DateOrder' => $DateOrder1->format('Y-m-d'),
         'DateGet' => $DateGet->format('Y-m-d'),
         'Price' => $sum
     ];

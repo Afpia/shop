@@ -122,7 +122,7 @@ function currentOrder(): array|false
 
 	$userId = $_SESSION['user']['id'] ?? null;
 
-	$stmt = $pdo->prepare("SELECT * FROM Orders WHERE ID_user = :id");
+	$stmt = $pdo->prepare("SELECT * FROM Orders WHERE ID_user = :id Order BY DateOrder DESC");
 	$stmt->execute(['id' => $userId]);
 	return $results =$stmt->fetchAll(\PDO::FETCH_ASSOC);
 }
@@ -137,7 +137,7 @@ function ProductSelect(){
 function currentDelivered ($DateGet){
 	$today = strtotime(date('Y-m-d')); 
     $input_date = strtotime($DateGet); 
-    if ($input_date == $today) {
+    if ($input_date <= $today) {
         return 'delivered';
     } else {
         return 'Processing';
@@ -149,7 +149,7 @@ function CountSumm($id)
 {
 	$pdo = getPDO();
 
-	$stmt = $pdo->prepare("SELECT SUM(count) AS sum_of_columns FROM ListOrder WHERE ID_order =:id");
+	$stmt = $pdo->prepare("SELECT SUM(count) AS sum_of_columns FROM ListOrder WHERE ID_order =:id ");
 	$stmt->execute(['id' => $id]);
 	return $stmt->fetchColumn();
 }
