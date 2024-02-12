@@ -84,7 +84,7 @@ $sum = 0
 							<p id="value1" class="nav-shop__count">' . $cartCount . ' Product</p>
 							<p class="nav-shop__cost" id="target-element">$' . $sum . '.00</p>
 						</div>
-						<form method="post" action="../php/checkoutOrder.php">
+						<form method="post" action="../checkoutOrder.php">
 							<button type="submit" class="nav-shop__buy">Checkout</button>
 						</form>
 					</div>

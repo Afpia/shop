@@ -84,7 +84,7 @@ function getPDO()
 }
 
 function getMySQL()
-{	
+{
 	$conn = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 	if (!$conn) {
 		die("Ошибка " . mysqli_connect_error());
@@ -124,24 +124,26 @@ function currentOrder(): array|false
 
 	$stmt = $pdo->prepare("SELECT * FROM Orders WHERE ID_user = :id");
 	$stmt->execute(['id' => $userId]);
-	return $results =$stmt->fetchAll(\PDO::FETCH_ASSOC);
+	return $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 }
 
-function ProductSelect(){
+function ProductSelect()
+{
 	$pdo = getPDO();
 	$stmt = $pdo->prepare("SELECT * FROM product");
 	$stmt->execute();
 	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function currentDelivered ($DateGet){
-	$today = strtotime(date('Y-m-d')); 
-    $input_date = strtotime($DateGet); 
-    if ($input_date == $today) {
-        return 'delivered';
-    } else {
-        return 'Processing';
-    };
+function currentDelivered($DateGet)
+{
+	$today = strtotime(date('Y-m-d'));
+	$input_date = strtotime($DateGet);
+	if ($input_date == $today) {
+		return 'delivered';
+	} else {
+		return 'Processing';
+	};
 };
 
 
@@ -149,9 +151,9 @@ function CountSumm($id)
 {
 	$pdo = getPDO();
 
-	$stmt = $pdo->prepare("SELECT SUM(count) AS sum_of_columns FROM ListOrder WHERE ID_order =:id");
-	$stmt->execute(['id' => $id]);
-	return $stmt->fetchColumn();
+	// $stmt = $pdo->prepare("SELECT SUM(count) AS sum_of_columns FROM ListOrder WHERE ID_order =:id");
+	// $stmt->execute(['id' => $id]);
+	// return $stmt->fetchColumn();
 }
 function logout(): void
 {
@@ -181,9 +183,10 @@ function currentProduct($id)
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 };
 
-function drowStars($rating){
+function drowStars($rating)
+{
 	$masage = '';
-	for($i = 1; $i<= $rating; $i++){
+	for ($i = 1; $i <= $rating; $i++) {
 		$masage = $masage . '<img src="/img/Star 5.svg" alt="">';
 	}
 	return $masage;
@@ -199,15 +202,17 @@ function currentCategory($id)
 };
 
 
-function ProductSelectOne($id){
+function ProductSelectOne($id)
+{
 	$pdo = getPDO();
 	$stmt = $pdo->prepare("SELECT * FROM product WHERE id =:id ");
 	$stmt->execute(['id' => $id]);
 	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function HasCart($cart){
-	return  count($cart) ;
+function HasCart($cart)
+{
+	return  count($cart);
 }
 
 function findOrder(string $email): array|bool

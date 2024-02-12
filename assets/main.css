@@ -1041,3 +1041,12 @@ html {
 	font-weight: 700;
 	line-height: 165.4%;
 }
+
+/* comp-order */
+.comp-order {
+	visibility: hidden;
+	position: absolute;
+	font-size: 50px;
+	top: 0;
+	left: 0;
+}
