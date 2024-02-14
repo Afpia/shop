@@ -727,3 +727,12 @@ html {
 	line-height: 150%;
 	color: #333333;
 }
+
+.done {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 200px;
+	color: #274c5b;
+	font-size: 60px;
+}

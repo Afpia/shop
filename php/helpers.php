@@ -84,7 +84,7 @@ function getPDO()
 }
 
 function getMySQL()
-{	
+{
 	$conn = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 	if (!$conn) {
 		die("Ошибка " . mysqli_connect_error());
@@ -101,20 +101,20 @@ function findUser(string $email): array|bool
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
 
-function currentUser(): array|false
-{
-	$pdo = getPDO();
+	function currentUser(): array|false
+	{
+		$pdo = getPDO();
 
-	if (!isset($_SESSION['user'])) {
-		return false;
+		if (!isset($_SESSION['user'])) {
+			return false;
+		}
+
+		$userId = $_SESSION['user']['id'] ?? null;
+
+		$stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
+		$stmt->execute(['id' => $userId]);
+		return $stmt->fetch(\PDO::FETCH_ASSOC);
 	}
-
-	$userId = $_SESSION['user']['id'] ?? null;
-
-	$stmt = $pdo->prepare("SELECT * FROM users WHERE id = :id");
-	$stmt->execute(['id' => $userId]);
-	return $stmt->fetch(\PDO::FETCH_ASSOC);
-}
 
 function currentOrder(): array|false
 {
@@ -124,10 +124,11 @@ function currentOrder(): array|false
 
 	$stmt = $pdo->prepare("SELECT * FROM Orders WHERE ID_user = :id Order BY DateOrder DESC");
 	$stmt->execute(['id' => $userId]);
-	return $results =$stmt->fetchAll(\PDO::FETCH_ASSOC);
+	return $results = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 }
 
-function ProductSelect(){
+function ProductSelect()
+{
 	$pdo = getPDO();
 	$stmt = $pdo->prepare("SELECT * FROM product");
 	$stmt->execute();
@@ -181,9 +182,10 @@ function currentProduct($id)
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 };
 
-function drowStars($rating){
+function drowStars($rating)
+{
 	$masage = '';
-	for($i = 1; $i<= $rating; $i++){
+	for ($i = 1; $i <= $rating; $i++) {
 		$masage = $masage . '<img src="/img/Star 5.svg" alt="">';
 	}
 	return $masage;
@@ -199,15 +201,17 @@ function currentCategory($id)
 };
 
 
-function ProductSelectOne($id){
+function ProductSelectOne($id)
+{
 	$pdo = getPDO();
 	$stmt = $pdo->prepare("SELECT * FROM product WHERE id =:id ");
 	$stmt->execute(['id' => $id]);
 	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function HasCart($cart){
-	return  count($cart) ;
+function HasCart($cart)
+{
+	return  count($cart);
 }
 
 function findOrder(string $email): array|bool

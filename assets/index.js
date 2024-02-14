@@ -106,12 +106,11 @@ gsap.from(".banner_get, .banner_get_2", {
 		trigger: ".get_segment",
 		start: "-15% center",
 		end: "+=250px",
-		markers: true,
 		scrub: 4,
 	},
 	scale: 0,
 	transformOrigin: "left center",
-	stagger: 1,
+	// stagger: 1,
 });
 
 document.addEventListener("DOMContentLoaded", function () {
