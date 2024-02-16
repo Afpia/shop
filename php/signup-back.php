@@ -21,7 +21,7 @@ if (!filter_var($email, filter: FILTER_VALIDATE_EMAIL)) {
 
 $user = findUser($email);
 
-if ($user) {
+if ($user['status'] == 'active') {
 	addValidationError(fieldName: 'email', message: 'The mail already exists');
 }
 
@@ -58,13 +58,15 @@ if (!empty($avatar['name'])) {
 
 $pdo = getPDO();
 
-$query = "INSERT INTO users (name, Email, avatar, password) VALUES (:name, :email, :avatar, :password)";
+$query = "INSERT INTO users (name, Email, avatar, password, status, role) VALUES (:name, :email, :avatar, :password, :status, :role)";
 
 $params = [
 	'name' => $name,
 	'email' => $email,
 	'avatar' => $avatarPath,
-	'password' => password_hash($password, PASSWORD_DEFAULT)
+	'password' => password_hash($password, PASSWORD_DEFAULT),
+	'status' => 'active',
+	'role' => 1
 ];
 
 $stmt = $pdo->prepare($query);
@@ -76,5 +78,6 @@ try {
 }
 
 $_SESSION['user']['id'] = findUser($email)['id'];
+$_SESSION['user']['role'] = findUser($email)['role'];
 
 redirect('/');

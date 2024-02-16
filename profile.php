@@ -112,6 +112,7 @@ $user = currentUser();
 					</div>
 					<input type="submit" id="submit" value="Confirm"></input>
 				</form>
+				<a href="/php/delieteProfile.php">delete profile</a>
 			</div>
 		</div>
 	</div>

@@ -30,6 +30,9 @@ $sum = 0
 					echo '<a href="./login.php"><li>Log in</li></a>';
 				} else {
 					echo '<a href="./profile.php"><li>Profile</li></a>';
+					if($_SESSION['user']['role'] == 2){
+					echo '<a href="./admin.php"><li>Admin</li></a>';
+					}
 				} ?>
 			</ul>
 		</nav>

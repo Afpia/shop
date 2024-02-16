@@ -96,8 +96,8 @@ function findUser(string $email): array|bool
 {
 	$pdo = getPDO();
 
-	$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-	$stmt->execute(['email' => $email]);
+	$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email AND status = :status");
+	$stmt->execute(['email' => $email , 'status' => 'active']);
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
 
@@ -157,6 +157,7 @@ function CountSumm($id)
 function logout(): void
 {
 	unset($_SESSION['user']['id']);
+	unset($_SESSION['user']['role']);
 	redirect('/');
 }
 

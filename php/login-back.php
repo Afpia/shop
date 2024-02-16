@@ -26,5 +26,6 @@ if (!password_verify($password, $user['password'])) {
 }
 
 $_SESSION['user']['id'] = $user['id'];
+$_SESSION['user']['role'] = $user['role'];
 
 redirect('/profile.php');
