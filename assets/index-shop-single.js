@@ -24,9 +24,26 @@ document.body.addEventListener("click", (event) => {
 	document.querySelector("body").classList.remove("close");
 });
 
-
 document.querySelector(".nav-shop").onclick = function (e) {
 	if (e.target.className != "button-delete") return;
 	let item = e.target.closest("li");
 	item.remove();
 };
+
+/* counter */
+
+const counter = document.querySelector("[data-counter]");
+const minus = document.querySelector('[data-action="minus"]');
+const plus = document.querySelector('[data-action="plus"]');
+
+minus.addEventListener("click", function () {
+	if (parseInt(counter.value) > 1) {
+		counter.value = --counter.value;
+	}
+});
+
+plus.addEventListener("click", function () {
+	if (parseInt(counter.value) < 10) {
+		counter.value = ++counter.value;
+	}
+});

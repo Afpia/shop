@@ -576,7 +576,7 @@ html {
 	position: relative;
 	cursor: pointer;
 }
-.profile__avatar-edit::after {
+.profile__avatar-edit:hover::after {
 	content: "";
 	position: absolute;
 	top: calc(50% - 24px);
@@ -586,7 +586,7 @@ html {
 	pointer-events: none;
 	height: 44px;
 }
-.profile__avatar-edit::before {
+.profile__avatar-edit:hover::before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -657,10 +657,24 @@ html {
 	padding: 40px;
 }
 
+/* delete-profile */
+
+.delete-profile {
+	font-size: 10px;
+	color: #999999;
+}
+.delete {
+	text-align: center;
+	position: absolute;
+	bottom: 10px;
+	right: 50%;
+	transform: translate(50%, 0);
+}
 /* history */
+
 .profile__history {
-	min-width: 1024px;
-	max-width: 540px;
+	max-width: 1024px;
+	max-height: 340px;
 	box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
 		0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
 		0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
@@ -671,7 +685,13 @@ html {
 	border-radius: 0.25rem;
 	padding: 24px;
 	position: relative;
+	overflow: clip;
 }
+.overflow-x {
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
 .profile__history::before {
 	content: "";
 	background-color: #f2f2f2;

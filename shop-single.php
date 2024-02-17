@@ -111,9 +111,11 @@ if (empty($product = currentProduct($_GET['id']))) {
 						<form action="/php/shop_cart.php" method="post" class="product__buy">
 							<input type="hidden" name="product" value="<?php echo $product['id'] ?>">
 							<p>Quantity:</p>
-
-							<input type="number" name="count" min="0" placeholder="1" step="1" max="10" value="1" required>
-
+							<div class="counter">
+								<div class="minus" data-action="minus"><img src="./img/minus.svg" alt="minus"></div>
+								<div class="counter__input"><input type="number" name="count" min="1" data-counter max="10" value="1" disabled></div>
+								<div class="plus" data-action="plus"><img src="./img/plus.svg" alt="plus"></div>
+							</div>
 							<button type="submit" class="shop_now">
 								Add to cart
 								<svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">

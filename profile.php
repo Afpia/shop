@@ -38,15 +38,19 @@ $user = currentUser();
 						<p class="email">Customer</p>
 						<button class="profile__edit" id="modal-button">Edit Profile</button>
 						<form action="/php/logout.php" class="profile__exit">
-							<button><img src="./img/exit.svg" alt="exit"></button>
+							<button><img src="./img/exit.svg" alt="exit" title="Выйти"></button>
 						</form>
+					</div>
+					<!-- admin -->
+					<div class="profile__info-main">
+						<h2>New Product</h2>
 					</div>
 				</div>
 				<div class="profile__footer">
 					<div class="profile__history">
 						<div class="profile__header">
 							<h2>Recet Order History</h2>
-							<button>View All</button>
+							<button class="view-all">View All</button>
 						</div>
 						<div class="profile__column">
 							<p>Date order</p>
@@ -54,17 +58,17 @@ $user = currentUser();
 							<p>TOTAL</p>
 							<p>STATUS</p>
 						</div>
-						<?php 
-						foreach(currentOrder() as $ord){
-							echo'
+						<?php
+						foreach (currentOrder() as $ord) {
+							echo '
 							<div class="profile__order">
-								<p>'.$ord['DateOrder'].'</p>
-								<p>'.$ord['DateGet'].'</p>
-								<p>$'.$ord['Price'].'.00 ('.CountSumm($ord['ID']).' Products)</p>
-								<p>'.currentDelivered($ord['DateGet']).'</p>
+								<p>' . $ord['DateOrder'] . '</p>
+								<p>' . $ord['DateGet'] . '</p>
+								<p>$' . $ord['Price'] . '.00 (' . CountSumm($ord['ID']) . ' Products)</p>
+								<p>' . currentDelivered($ord['DateGet']) . '</p>
 							</div>';
 						}
-						 ?>
+						?>
 					</div>
 				</div>
 			</div>
@@ -112,7 +116,7 @@ $user = currentUser();
 					</div>
 					<input type="submit" id="submit" value="Confirm"></input>
 				</form>
-				<a href="/php/delieteProfile.php">delete profile</a>
+				<div class="delete"><a href="/php/delieteProfile.php" class="delete-profile">Удалить профиль</a></div>
 			</div>
 		</div>
 	</div>

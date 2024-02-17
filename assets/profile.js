@@ -55,6 +55,13 @@ document.querySelector(".nav-shop").onclick = function (e) {
 	item.remove();
 };
 
+// view all
 
-
-
+document.querySelector(".view-all").addEventListener("click", function () {
+	let area = document.querySelector(".profile__history");
+	if (!area.classList.contains("overflow-x")) {
+		area.classList.add("overflow-x");
+	} else {
+		area.classList.remove("overflow-x");
+	}
+});

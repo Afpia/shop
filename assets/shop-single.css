@@ -673,19 +673,31 @@ html {
 	line-height: normal;
 }
 .product__buy input {
-	border-radius: 16px;
-	border: 2px solid #274c5b;
+	/* border-radius: 16px;
+	border: 2px solid #274c5b; */
 	background: #fff;
 	display: flex;
-	padding-top: 30px;
+	/* padding-top: 30px;
 	padding-bottom: 30px;
 	padding-left: 55px;
-	padding-right: 33px;
+	padding-right: 33px; */
+	width: 100%;
+	text-align: center;
+	/* min-height: 80px; */
+}
+.counter__input {
+	/* padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 55px;
+	padding-right: 33px; */
+	min-height: 80px;
+	width: 130px;
+	height: 80px;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
-	width: 130px;
-	min-height: 80px;
+	border-radius: 16px;
+	border: 2px solid #274c5b;
 }
 .shop_now:hover {
 	background: #416574;
@@ -1035,4 +1047,28 @@ input[type="number"]::-webkit-inner-spin-button {
 	font-style: normal;
 	font-weight: 700;
 	line-height: 165.4%;
+}
+
+/* counter */
+
+.counter {
+	position: relative;
+}
+.minus {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+	user-select: none;
+	width: 24px;
+	height: 24px;
+}
+.plus {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 10px;
+	user-select: none;
+	width: 24px;
+	height: 24px;
 }
