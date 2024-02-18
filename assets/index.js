@@ -4,41 +4,48 @@ ti.fromTo(
 	".header__logo",
 	{
 		opacity: 0,
+	},
+	{
+		opacity: 1,
+		duration: 1.5,
+	},
+	1
+)
+	.fromTo(
+		".burger-menu",
+		{
+			opacity: 0,
+		},
+		{
+			opacity: 1,
+			duration: 1.5,
+		},
+		1
+	)
+	.fromTo(
+		".home__title, .home__subtitle, .home__button",
+		{
+			y: 30,
+		},
+		{
+			y: 0,
+			duration: 1.5,
+		},
+		1
+	);
+ti.fromTo(
+	".nav a",
+	{
+		opacity: 0,
 		x: -100,
 	},
 	{
 		x: 0,
 		opacity: 1,
+		stagger: 0.15,
 	},
-	1
+	2
 )
-	.fromTo(
-		".home",
-		{
-			scale: 0,
-			opacity: 0,
-		},
-		{
-			scale: 1,
-			opacity: 1,
-			duration: 1,
-			stagger: 0.2,
-		},
-		1
-	)
-	.fromTo(
-		".nav a",
-		{
-			opacity: 0,
-			x: -100,
-		},
-		{
-			x: 0,
-			opacity: 1,
-			stagger: 0.15,
-		},
-		2
-	)
 	.fromTo(
 		".input",
 		{
@@ -61,17 +68,6 @@ ti.fromTo(
 			x: 0,
 			opacity: 1,
 			rotation: 0,
-			duration: 2,
-		},
-		4
-	)
-	.fromTo(
-		".burger-menu",
-		{
-			opacity: 0,
-		},
-		{
-			opacity: 1,
 			duration: 2,
 		},
 		4
@@ -106,11 +102,27 @@ gsap.from(".banner_get, .banner_get_2", {
 		trigger: ".get_segment",
 		start: "-15% center",
 		end: "+=250px",
-		scrub: 4,
 	},
 	scale: 0,
 	transformOrigin: "left center",
 	// stagger: 1,
+});
+gsap.from(".img_segment_belive", {
+	scrollTrigger: {
+		trigger: ".img_segment_belive",
+		start: "-30% center",
+		end: "+=250px",
+	},
+	x: -30,
+});
+gsap.from(".title_block, .main_text, .blocks_segment_belive", {
+	scrollTrigger: {
+		trigger: ".img_segment_belive",
+		start: "top center",
+		end: "+=450px",
+	},
+	y: 20,
+	stagger: 0.8,
 });
 
 document.addEventListener("DOMContentLoaded", function () {

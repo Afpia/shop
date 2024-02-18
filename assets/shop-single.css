@@ -1062,6 +1062,7 @@ input[type="number"]::-webkit-inner-spin-button {
 	user-select: none;
 	width: 24px;
 	height: 24px;
+	cursor: pointer;
 }
 .plus {
 	position: absolute;
@@ -1071,4 +1072,5 @@ input[type="number"]::-webkit-inner-spin-button {
 	user-select: none;
 	width: 24px;
 	height: 24px;
+	cursor: pointer;
 }
