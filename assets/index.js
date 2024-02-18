@@ -123,6 +123,7 @@ gsap.from(".title_block, .main_text, .blocks_segment_belive", {
 	},
 	y: 20,
 	stagger: 0.8,
+	
 });
 
 document.addEventListener("DOMContentLoaded", function () {
