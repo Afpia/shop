@@ -42,8 +42,38 @@ $user = currentUser();
 						</form>
 					</div>
 					<!-- admin -->
-					<div class="profile__info-main">
-						<h2>New Product</h2>
+					<div class="new-product-main">
+						<h2 class="new-product">New Product</h2>
+						<form action="" method="POST">
+							<div class="new-product__header">
+								<div class="new-product__categories">
+									<p class="new-product__title">Categories:</p>
+									<select class="new-product__input" require>
+										<option value=""></option>
+										<option value="Fresh">Fresh</option>
+										<option value="Millets">Millets</option>
+										<option value="Vegetable">Vegetable</option>
+										<option value="Nuts">Nuts</option>
+										<option value="Health">Health</option>
+									</select>
+								</div>
+								<div class="new-product__name">
+									<p class="new-product__title">Name:</p>
+									<input type="text" class="new-product__input-name">
+								</div>
+							</div>
+							<div class="new-product__header">
+								<div class="new-product__price">
+									<p class="new-product__title">Price:</p>
+									<input type="text" class="new-product__input-price">
+								</div>
+								<div class="new-product__picture">
+									<p class="new-product__title">Picture:</p>
+									<input type="file" accept="image/png, image/jpeg" class="new-product__input-file">
+								</div>
+							</div>
+							<input type="submit" value="Confirm" class="new-product__submit"></input>
+						</form>
 					</div>
 				</div>
 				<div class="profile__footer">

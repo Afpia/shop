@@ -113,17 +113,15 @@ gsap.from(".img_segment_belive", {
 		start: "-30% center",
 		end: "+=250px",
 	},
-	x: -30,
+	x: -50,
 });
-gsap.from(".title_block, .main_text, .blocks_segment_belive", {
+gsap.from(".text_segment_belive", {
 	scrollTrigger: {
 		trigger: ".img_segment_belive",
-		start: "top center",
-		end: "+=450px",
+		start: "10% center",
 	},
-	y: 20,
+	y: 50,
 	stagger: 0.8,
-	
 });
 
 document.addEventListener("DOMContentLoaded", function () {

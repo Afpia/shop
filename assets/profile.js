@@ -59,7 +59,8 @@ document.querySelector(".nav-shop").onclick = function (e) {
 
 document.querySelector(".view-all").addEventListener("click", function () {
 	let area = document.querySelector(".profile__history");
-	if (!area.classList.contains("overflow-x")) {
+	let order = document.querySelectorAll(".profile__order");
+	if (!area.classList.contains("overflow-x") && order.length >= 6) {
 		area.classList.add("overflow-x");
 	} else {
 		area.classList.remove("overflow-x");
