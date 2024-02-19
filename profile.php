@@ -53,7 +53,7 @@ $user = currentUser();
 						'
 						<div class="new-product-main">
 						<h2 class="new-product">New Product</h2>
-						<form action="/php/addProduct.php" method="POST">
+						<form action="/php/addProduct.php" method="POST" enctype="multipart/form-data">
 							<div class="new-product__header">
 								<div class="new-product__categories">
 									<p class="new-product__title">Categories:</p>
