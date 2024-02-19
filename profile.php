@@ -97,7 +97,7 @@ $user = currentUser();
 							</div>
 							<div class="new-product__description">
 								<p class="new-product__title">Description:</p>
-								<textarea class="new-product__textarea"  placeholder="Description Product" required></textarea>
+								<textarea class="new-product__textarea"  placeholder="Description Product" maxlength="378" required></textarea>
 							</div>
 							<input type="submit" value="Confirm" class="new-product__submit"></input>
 						</form>
@@ -105,8 +105,6 @@ $user = currentUser();
 						';
 					}
 					?>
-
-
 				</div>
 				<div class="profile__footer">
 					<div class="profile__history">
