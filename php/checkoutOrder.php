@@ -17,11 +17,11 @@
 
     $pdo = getPDO();
 
-    $query = "INSERT INTO Orders (ID_user, DateOrder, DateGet, Price) VALUES (:ID_user, :DateOrder, :DateGet, :Price)";
+    $query = "INSERT INTO Orders (ID_user, DateOrder, DateGet, Price) VALUES (:ID_user, :DateOrder1, :DateGet, :Price)";
 
     $params = [
         'ID_user' => $_SESSION['user']['id'],
-        'DateOrder' => $DateOrder1->format('Y-m-d'),
+        'DateOrder1' => $DateOrder1->format('Y-m-d'),
         'DateGet' => $DateGet->format('Y-m-d'),
         'Price' => $sum
     ];

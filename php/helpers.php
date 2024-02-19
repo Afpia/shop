@@ -135,6 +135,14 @@ function ProductSelect()
 	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function CategSelect()
+{
+	$pdo = getPDO();
+	$stmt = $pdo->prepare("SELECT * FROM Categories");
+	$stmt->execute();
+	return $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function currentDelivered ($DateGet){
 	$today = strtotime(date('Y-m-d')); 
     $input_date = strtotime($DateGet); 

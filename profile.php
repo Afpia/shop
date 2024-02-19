@@ -42,39 +42,49 @@ $user = currentUser();
 						</form>
 					</div>
 					<!-- admin -->
-					<div class="new-product-main">
+					<?php
+					if($_SESSION['user']['role'] == 2){
+						echo 
+						'
+						<div class="new-product-main">
 						<h2 class="new-product">New Product</h2>
-						<form action="" method="POST">
+						<form action="/php/addProduct.php" method="POST">
 							<div class="new-product__header">
 								<div class="new-product__categories">
 									<p class="new-product__title">Categories:</p>
-									<select class="new-product__input" require>
-										<option value=""></option>
-										<option value="Fresh">Fresh</option>
-										<option value="Millets">Millets</option>
-										<option value="Vegetable">Vegetable</option>
-										<option value="Nuts">Nuts</option>
-										<option value="Health">Health</option>
+									<select name="categorie" class="new-product__input" require>
+										<option value=""></option>';
+										foreach(CategSelect() as $row){
+											echo '
+										<option value="'.$row['ID'].'">'.$row['Categ_name'].'</option>
+											';
+										}
+										echo'
 									</select>
 								</div>
 								<div class="new-product__name">
 									<p class="new-product__title">Name:</p>
-									<input type="text" class="new-product__input-name">
+									<input name="name" type="text" class="new-product__input-name value="'.old('name').'">
 								</div>
 							</div>
 							<div class="new-product__header">
 								<div class="new-product__price">
 									<p class="new-product__title">Price:</p>
-									<input type="text" class="new-product__input-price">
+									<input name="price" type="text" class="new-product__input-price value="'.old('name').'"">
 								</div>
 								<div class="new-product__picture">
 									<p class="new-product__title">Picture:</p>
-									<input type="file" accept="image/png, image/jpeg" class="new-product__input-file">
+									<input type="file" name="image" accept="image/png, image/jpeg" class="new-product__input-file">
 								</div>
 							</div>
 							<input type="submit" value="Confirm" class="new-product__submit"></input>
 						</form>
 					</div>
+						';
+					}
+					?>
+					
+
 				</div>
 				<div class="profile__footer">
 					<div class="profile__history">

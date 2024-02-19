@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/helpers.php';
 
-$results = ProductSelect();
-
-foreach (ProductSelect() as $row) {
-    echo "ID: " . $row['id'] . ", Name: " . $row['name'] . ", Price: " . $row['price'] . "<br>";
-}
+$DateOrder1 = new DateTime();
+$DateOrder = new DateTime();
+$DateGet = $DateOrder->add(new DateInterval('P1W'));
+echo $DateOrder1->format('Y-m-d');
+echo $DateGet->format('Y-m-d');

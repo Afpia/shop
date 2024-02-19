@@ -29,9 +29,10 @@ $sum = 0
 				<?php if (empty($_SESSION['user']['id'])) {
 					echo '<a href="./login.php"><li>Log in</li></a>';
 				} else {
-					echo '<a href="./profile.php"><li>Profile</li></a>';
 					if($_SESSION['user']['role'] == 2){
-					echo '<a href="./admin.php"><li>Admin</li></a>';
+					echo '<a href="./profile.php"><li>Admin</li></a>';
+					}else{
+						echo '<a href="./profile.php"><li>Profile</li></a>';
 					}
 				} ?>
 			</ul>

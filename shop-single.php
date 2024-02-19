@@ -113,7 +113,7 @@ if (empty($product = currentProduct($_GET['id']))) {
 							<p>Quantity:</p>
 							<div class="counter">
 								<div class="minus" data-action="minus"><img src="./img/minus.svg" alt="minus"></div>
-								<div class="counter__input"><input type="number" name="count" min="1" data-counter max="10" value="1" disabled></div>
+								<div class="counter__input"><input name="count" type="number"  min="1" data-counter max="10" value="1" readonly></div>
 								<div class="plus" data-action="plus"><img src="./img/plus.svg" alt="plus"></div>
 							</div>
 							<button type="submit" class="shop_now">

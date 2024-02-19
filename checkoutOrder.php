@@ -7,6 +7,7 @@ if (empty($_SESSION['cart'])) {
 
 $sum = 0;
 $DateOrder = new DateTime();
+$DateOrder1 = new DateTime();
 $DateGet = $DateOrder->add(new DateInterval('P1W'));
 foreach ($_SESSION['cart'] as $row) {
 	$productOrder = ProductSelectOne($row['id']);
@@ -20,7 +21,7 @@ $query = "INSERT INTO Orders (ID_user, DateOrder, DateGet, Price) VALUES (:ID_us
 
 $params = [
 	'ID_user' => $_SESSION['user']['id'],
-	'DateOrder' => $DateOrder->format('Y-m-d'),
+	'DateOrder' => $DateOrder1->format('Y-m-d'),
 	'DateGet' => $DateGet->format('Y-m-d'),
 	'Price' => $sum
 ];
