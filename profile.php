@@ -48,39 +48,53 @@ $user = currentUser();
 					</div>
 					<!-- admin -->
 					<?php
-					if($_SESSION['user']['role'] == 2){
-						echo 
+					if ($_SESSION['user']['role'] == 2) {
+						echo
 						'
 						<div class="new-product-main">
 						<h2 class="new-product">New Product</h2>
 						<form action="/php/addProduct.php" method="POST" enctype="multipart/form-data">
 							<div class="new-product__header">
-								<div class="new-product__categories">
-									<p class="new-product__title">Categories:</p>
-									<select name="categorie" class="new-product__input" require>
-										<option value=""></option>';
-										foreach(CategSelect() as $row){
-											echo '
-										<option value="'.$row['ID'].'">'.$row['Categ_name'].'</option>
-											';
-										}
-										echo'
-									</select>
-								</div>
 								<div class="new-product__name">
 									<p class="new-product__title">Name:</p>
-									<input name="name" type="text" class="new-product__input-name value="'.old('name').'">
-								</div>
-							</div>
-							<div class="new-product__header">
-								<div class="new-product__price">
-									<p class="new-product__title">Price:</p>
-									<input name="price" type="text" class="new-product__input-price value="'.old('name').'"">
+									<input name="name" type="text" class="new-product__input-name value="' . old('name') . '">
 								</div>
 								<div class="new-product__picture">
 									<p class="new-product__title">Picture:</p>
 									<input type="file" name="image" accept="image/png, image/jpeg" class="new-product__input-file">
 								</div>
+							</div>
+							<div class="new-product__header">
+								<div class="new-product__categories">
+									<p class="new-product__title">Categories:</p>
+									<select name="categorie" class="new-product__input" require>
+										<option value="Pick Categories" selected disabled>Select</option>';
+						foreach (CategSelect() as $row) {
+							echo '
+										<option value="' . $row['ID'] . '">' . $row['Categ_name'] . '</option>
+											';
+						}
+						echo '
+									</select>
+								</div>
+								<div class="new-product__categories">
+									<p class="new-product__title" name="categories">New category:</p>
+									<input name="categories" type="text" class="new-product__input-name value="' . old('categories') . '" >
+								</div>
+							</div>
+							<div class="new-product__header">
+								<div class="new-product__price">
+									<p class="new-product__title">Price:</p>
+									<input name="price" type="number" class="new-product__input-price value="' . old('price') . '"">
+								</div>
+								<div class="new-product__discount">
+									<p class="new-product__title">Discount:</p>
+									<input name="Discount" type="number" class="new-product__input-price value="' . old('Discount') . '"">
+								</div>
+							</div>
+							<div class="new-product__description">
+								<p class="new-product__title">Description:</p>
+								<textarea name="description" class="new-product__textarea" value="' . old('Description') . '"  placeholder="Description Product" required></textarea>
 							</div>
 							<input type="submit" value="Confirm" class="new-product__submit"></input>
 						</form>
@@ -88,9 +102,12 @@ $user = currentUser();
 						';
 					}
 					?>
-					
+
 
 				</div>
+				<?php if($_SESSION['user']['role'] != 2) {
+					echo '
+				
 				<div class="profile__footer">
 					<div class="profile__history">
 						<div class="profile__header">
@@ -102,8 +119,8 @@ $user = currentUser();
 							<p>Date get</p>
 							<p>TOTAL</p>
 							<p>STATUS</p>
-						</div>
-						<?php
+						</div>';
+						
 						foreach (currentOrder() as $ord) {
 							echo '
 							<div class="profile__order">
@@ -112,6 +129,7 @@ $user = currentUser();
 								<p>$' . $ord['Price'] . '.00 (' . CountSumm($ord['ID']) . ' Products)</p>
 								<p>' . currentDelivered($ord['DateGet']) . '</p>
 							</div>';
+						}
 						}
 						?>
 					</div>

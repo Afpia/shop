@@ -231,3 +231,12 @@ function findOrder(string $email): array|bool
 	$stmt->execute(['email' => $email]);
 	return $stmt->fetch(\PDO::FETCH_ASSOC);
 }
+
+function findCategory(string $name): array|bool
+{
+	$pdo = getPDO();
+
+	$stmt = $pdo->prepare("SELECT * FROM Categories WHERE Categ_name = :name");
+	$stmt->execute(['name' => $name]);
+	return $stmt->fetch(\PDO::FETCH_ASSOC);
+}
