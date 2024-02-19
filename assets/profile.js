@@ -46,9 +46,36 @@ function modal() {
 		event.currentTarget.classList.remove("open");
 	});
 }
+function modalCategories() {
+	document
+		.getElementById("profile__links-categories")
+		.addEventListener("click", function () {
+			document.getElementById("modal-categories").classList.add("open");
+		});
+	document.getElementById("modal-esc-2").addEventListener("click", function () {
+		document.getElementById("modal-categories").classList.remove("open");
+	});
+	document
+		.querySelector(".modal__inner-categories")
+		.addEventListener("click", (event) => {
+			event._isClickWithInModal = true;
+		});
+	document
+		.getElementById("modal-categories")
+		.addEventListener("click", (event) => {
+			if (event._isClickWithInModal) return;
+			event.currentTarget.classList.remove("open");
+		});
+}
 modal();
+modalCategories();
 cart();
 
+document.querySelector(".modal__inner-categories").onclick = function (e) {
+	if (e.target.className != "modal__inner-delete") return;
+	let item = e.target.closest("div");
+	item.remove();
+};
 document.querySelector(".nav-shop").onclick = function (e) {
 	if (e.target.className != "button-delete") return;
 	let item = e.target.closest("li");
