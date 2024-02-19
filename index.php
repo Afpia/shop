@@ -7,7 +7,12 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Organick</title>
-	<link rel="icon" href="./img/favicon.png" />
+	<link type="image/x-icon" rel="shortcut icon" href="./img/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+	<link type="image/png" sizes="192x192" rel="icon" href="./img/android-icon-192x192.png">
+	<link type="image/png" sizes="192x192" rel="icon" href="./img/android-icon-192x192.png">
 	<link rel="stylesheet" href="./assets/reset.css" />
 	<link rel="stylesheet" href="./assets/main.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
