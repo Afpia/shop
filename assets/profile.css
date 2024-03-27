@@ -991,9 +991,9 @@ input[type="number"] {
 	background: #ffffff;
 	border-radius: 0.25rem;
 	padding: 40px;
-	position: relative;
+	/* position: relative; */
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 .profile__link {
 	font-size: 18px;
@@ -1004,4 +1004,65 @@ input[type="number"] {
 }
 .profile__link:hover {
 	color: #7eb693;
+}
+
+/* modal all-users */
+
+.modal__all-users {
+	position: absolute;
+	top: -344px;
+	left: 0;
+
+	background-color: white;
+
+	width: 1024px;
+	height: 622px;
+
+	padding: 40px;
+	z-index: 0;
+	opacity: 0;
+	border-radius: 0.25rem;
+	box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+		0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
+		0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
+		0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
+		0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
+		0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+	transition: all 0.5s ease-in-out;
+	visibility: hidden;
+	z-index: -1;
+}
+
+.modal__all-users.open {
+	visibility: visible;
+	opacity: 1;
+	z-index: 100;
+}
+
+.modal__all-users__user {
+	display: flex;
+	gap: 24px;
+	margin-top: 40px;
+	margin-bottom: 6px;
+}
+
+.modal__all-users__title {
+	font-size: 1.75rem;
+	color: #274c5b;
+}
+.user-input {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.user__status-color {
+	color: red;
+}
+.user-input input {
+	width: 100%;
+	border: 1px solid #cfd0d1;
+	border-radius: 0.25rem;
+	padding: 1rem;
+	font-size: 1rem;
+	height: 36px;
 }

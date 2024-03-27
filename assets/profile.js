@@ -68,19 +68,37 @@ function modalCategories() {
 		});
 }
 modal();
-modalCategories();
+// modalCategories();
 cart();
 
-document.querySelector(".modal__inner-categories").onclick = function (e) {
-	if (e.target.className != "modal__inner-delete") return;
-	let item = e.target.closest("div");
-	item.remove();
-};
-document.querySelector(".nav-shop").onclick = function (e) {
-	if (e.target.className != "button-delete") return;
-	let item = e.target.closest("li");
-	item.remove();
-};
+// document.querySelector(".modal__inner-categories").onclick = function (e) {
+// 	if (e.target.className != "modal__inner-delete") return;
+// 	let item = e.target.closest("div");
+// 	item.remove();
+// };
+// document.querySelector(".nav-shop").onclick = function (e) {
+// 	if (e.target.className != "button-delete") return;
+// 	let item = e.target.closest("li");
+// 	item.remove();
+// };
+
+function allUsers() {
+	const modalUser = document.querySelector(".modal__all-users");
+	const modalCross = document.getElementById("modal-esc-user");
+
+	document.addEventListener("click", (event) => {
+		if (event.target.closest(".profile__links-users")) {
+			modalUser.classList.toggle("open");
+		} else if (!event.target.closest(".modal__all-users")) {
+			modalUser.classList.remove("open");
+		}
+		modalCross.addEventListener("click", function () {
+			modalUser.classList.remove("open");
+		});
+	});
+}
+
+allUsers();
 
 // view all
 
