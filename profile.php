@@ -49,11 +49,48 @@ $user = currentUser();
 						</div>
 						<div class="profile__links">
 							<button class="profile__link profile__links-product">All Products</button>
-							<button class="profile__link" id="profile__links-users">All Users</button>
-							<button class="profile__link" id="profile__links-categories">All Categories</button>
-							<div class="modal-categories" id="modal-categories">
+							<button class="profile__link profile__links-users">All Users</button>
+
+							<div class="modal__all-users">
+								<div class="modal__all-users__inner">
+									<h2 class="modal__all-users__title">All Users</h2>
+									<button class="modal-esc modal-cross" id="modal-esc-user">
+										<span></span>
+										<span></span>
+									</button>
+
+									<div class="modal__all-users__main">
+										<div class="modal__all-users__user">
+											<div class="user__id user-input">
+												<p>ID</p>
+												<input type="text" value="">
+											</div>
+
+											<div class="user__name user-input">
+												<p>Name</p>
+												<input type="text" value="">
+											</div>
+
+											<div class="user__email user-input">
+												<p>Email</p>
+												<input type="text" value="">
+											</div>
+
+											<div class="user__status user-input">
+												<p>Status:</p>
+												<p class="user__status-color">Active</p>
+											</div>
+
+											<div class="user__role  user-input">
+												<p>Role</p>
+												<input type="number" value="2">
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="modal__inner-categories">
+
+							<!-- <div class="modal__inner-categories">
 								<h2 class="modal__inner-title">List:</h2>
 								<button class="modal-esc modal-cross" id="modal-esc-2">
 									<span></span>
@@ -136,7 +173,7 @@ $user = currentUser();
 											</svg></button>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 
