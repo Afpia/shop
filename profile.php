@@ -54,38 +54,80 @@ $user = currentUser();
 							<div class="modal__all-users">
 								<div class="modal__all-users__inner">
 									<h2 class="modal__all-users__title">All Users</h2>
-									<button class="modal-esc modal-cross" id="modal-esc-user">
+									<button class="modal-esc modal-cross modal-products" id="modal-esc-user">
 										<span></span>
 										<span></span>
 									</button>
 
 									<div class="modal__all-users__main">
-										<div class="modal__all-users__user">
+										<form action="" class="modal__all-users__user">
 											<div class="user__id user-input">
-												<p>ID</p>
+												<p>ID:</p>
 												<input type="text" value="">
 											</div>
 
 											<div class="user__name user-input">
-												<p>Name</p>
-												<input type="text" value="">
+												<p>Name:</p>
+												<p class="user__text">Филипп</p>
 											</div>
 
 											<div class="user__email user-input">
-												<p>Email</p>
-												<input type="text" value="">
+												<p>Email:</p>
+												<p class="user__text">fa.vakurov@gmail.com</p>
 											</div>
 
 											<div class="user__status user-input">
 												<p>Status:</p>
-												<p class="user__status-color">Active</p>
+												<select class="user__select">
+													<option>Active</option>
+													<option>Delete</option>
+												</select>
 											</div>
 
 											<div class="user__role  user-input">
-												<p>Role</p>
-												<input type="number" value="2">
+												<p>Role:</p>
+												<select class="user__select-role">
+													<option>1</option>
+													<option>2</option>
+												</select>
 											</div>
-										</div>
+											<button type="submit" class="user__submit">Сохранить</button>
+										</form>
+
+									</div>
+
+
+								</div>
+							</div>
+
+							<div class="modal__all-products">
+								<div class="modal__all-products__inner">
+									<h2 class="modal__all-users__title">All Products</h2>
+									<button class="modal-esc modal-cross modal-products" id="modal-esc-product">
+										<span></span>
+										<span></span>
+									</button>
+
+									<div class="modal__all-products__main">
+										<form action="" class="modal__all-products__product">
+											<div class="user__id user-input">
+												<p>ID:</p>
+												<input type="text" value="">
+											</div>
+
+											<div class="categories__name user-input">
+												<p>Name:</p>
+												<input type="text" value="Бананчики" class="categories__text">
+											</div>
+
+											<div class="categories__name user-input">
+												<p>Price:</p>
+												<input type="text" value="Бананчики" class="categories__text">
+											</div>
+
+
+
+										</form>
 									</div>
 								</div>
 							</div>

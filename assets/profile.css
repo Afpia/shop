@@ -1031,6 +1031,7 @@ input[type="number"] {
 	transition: all 0.5s ease-in-out;
 	visibility: hidden;
 	z-index: -1;
+	overflow-y: auto;
 }
 
 .modal__all-users.open {
@@ -1041,9 +1042,13 @@ input[type="number"] {
 
 .modal__all-users__user {
 	display: flex;
-	gap: 24px;
+	gap: 14px;
 	margin-top: 40px;
 	margin-bottom: 6px;
+	color: #274c5b;
+
+	overflow: auto;
+	overflow-x: hidden;
 }
 
 .modal__all-users__title {
@@ -1065,4 +1070,98 @@ input[type="number"] {
 	padding: 1rem;
 	font-size: 1rem;
 	height: 36px;
+}
+.user__id {
+	max-width: 100px;
+}
+
+.user__name {
+	width: 200px;
+}
+.user__email {
+	width: 400px;
+}
+.user__text {
+	color: #7eb693;
+}
+.user__select {
+	outline: none;
+	border: 1px solid #cfd0d1;
+	border-radius: 0.25rem;
+	height: 36px;
+	padding: 0px 6px 0px 6px;
+}
+.user__select-role {
+	outline: none;
+	border: 1px solid #cfd0d1;
+	border-radius: 0.25rem;
+	height: 36px;
+	padding: 0px 6px 0px 6px;
+}
+.user__role {
+	width: 100px;
+}
+.user__submit {
+	padding: 4px 7px;
+	height: 36px;
+	background-color: #7eb693 !important;
+	border-radius: 0.25rem;
+	color: #fff;
+	font-size: 18px;
+	background-color: inherit;
+}
+
+/* modal all-products*/
+
+.modal__all-products {
+	position: absolute;
+	top: -344px;
+	left: 0;
+
+	background-color: white;
+
+	width: 1024px;
+	height: 622px;
+
+	padding: 40px;
+	z-index: 0;
+	opacity: 0;
+	border-radius: 0.25rem;
+	box-shadow: 0.0145rem 0.029rem 0.174rem rgba(0, 0, 0, 0.01698),
+		0.0335rem 0.067rem 0.402rem rgba(0, 0, 0, 0.024),
+		0.0625rem 0.125rem 0.75rem rgba(0, 0, 0, 0.03),
+		0.1125rem 0.225rem 1.35rem rgba(0, 0, 0, 0.036),
+		0.2085rem 0.417rem 2.502rem rgba(0, 0, 0, 0.04302),
+		0.5rem 1rem 6rem rgba(0, 0, 0, 0.06), 0 0 0 0.0625rem rgba(0, 0, 0, 0.015);
+	transition: all 0.5s ease-in-out;
+	visibility: hidden;
+	z-index: -1;
+	overflow-y: auto;
+}
+
+.modal__all-products.open {
+	visibility: visible;
+	opacity: 1;
+	z-index: 100;
+}
+.modal-products {
+	top: 35px;
+}
+
+.modal__all-products__product {
+	display: flex;
+	gap: 14px;
+	margin-top: 40px;
+	margin-bottom: 6px;
+	color: #274c5b;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.categories__text {
+	color: #7eb693;
+}
+
+.categories__name {
+	width: 200px;
 }

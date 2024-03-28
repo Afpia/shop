@@ -97,8 +97,25 @@ function allUsers() {
 		});
 	});
 }
-
 allUsers();
+
+function allProducts() {
+	const modalProducts = document.querySelector(".modal__all-products");
+	const modalCross = document.getElementById("modal-esc-product");
+
+	document.addEventListener("click", (event) => {
+		if (event.target.closest(".profile__links-product")) {
+			modalProducts.classList.toggle("open");
+		} else if (!event.target.closest(".modal__all-products")) {
+			modalProducts.classList.remove("open");
+		}
+		modalCross.addEventListener("click", function () {
+			modalProducts.classList.remove("open");
+		});
+	});
+}
+allProducts();
+
 
 // view all
 
